@@ -1,10 +1,11 @@
-import React from "react";
-import "./App.scss";
 //Components
+import "./App.scss";
+import React from "react";
 import Header from "./components/header";
+import { Canvas } from "@react-three/fiber";
 import { Text } from '@react-three/drei';
 import { RoundedBox } from '@react-three/drei';
-import { Canvas } from "@react-three/fiber";
+import { Section } from "./components/section"
 
 const TEXT_PROPS = {
   fontSize: 1,
@@ -20,10 +21,13 @@ export default function App() {
     <>
       <Header />
       <Canvas camera={{ position: [0, 0, 5], fov: 70 }}>
-        <Title />
-        <RoundedBox args={[1, 1, 1]} radius={0.05} smoothness={4}>
-          <meshPhongMaterial attach="material" color="#f3f3f3" wireframe />
-        </RoundedBox>
+          <Section factor={1.5} offset={1}></Section>
+          <group position={[0,0,0]}>
+          <Title />
+          <RoundedBox args={[1, 1, 1]} radius={0.05} smoothness={4}>
+            <meshPhongMaterial attach="material" color="#f3f3f3" wireframe />
+          </RoundedBox>
+          </group>
       </Canvas>
     </>
   );
