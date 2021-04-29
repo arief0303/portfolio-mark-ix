@@ -9,7 +9,7 @@ export default function App() {
       <Header />
       <div className='container'>
         <div className='title'>
-          <h1>Stater Branch</h1>
+          <h1>Talon</h1>
         </div>
       </div>
     </>
