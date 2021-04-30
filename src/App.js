@@ -21,13 +21,14 @@ export default function App() {
     <>
       <Header />
       <Canvas camera={{ position: [0, 0, 5], fov: 70 }}>
-          <Section factor={1.5} offset={1}></Section>
-          <group position={[0,0,0]}>
-          <Title />
-          <RoundedBox args={[1, 1, 1]} radius={0.05} smoothness={4}>
-            <meshPhongMaterial attach="material" color="#f3f3f3" wireframe />
-          </RoundedBox>
-          </group>
+          <Section factor={1.5} offset={0}>
+            <group position={[0,0,0]}>
+            <Title />
+              <RoundedBox args={[1, 1, 1]} radius={0.05} smoothness={4}>
+              <meshPhongMaterial attach="material" color="#f3f3f3" wireframe />
+              </RoundedBox>
+            </group>
+          </Section>
       </Canvas>
     </>
   );
