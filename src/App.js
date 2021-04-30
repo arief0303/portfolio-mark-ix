@@ -21,7 +21,7 @@ export default function App() {
     <>
       <Header />
       <Canvas camera={{ position: [0, 0, 5], fov: 70 }}>
-          <Section factor={1.5} offset={0}>
+          <Section factor={1} offset={0}>
             <group position={[0,0,0]}>
             <Title />
               <RoundedBox args={[1, 1, 1]} radius={0.05} smoothness={4}>
@@ -29,6 +29,8 @@ export default function App() {
               </RoundedBox>
             </group>
           </Section>
+          {/* <Block factor={1.2} offset={5.7}> */}
+  
       </Canvas>
     </>
   );
