@@ -1,10 +1,13 @@
 //Components
 import "./App.scss";
-import React from "react";
+import React, { useRef, useState } from "react";
 import Header from "./components/header";
-import { Canvas } from "@react-three/fiber";
-import { Text, RoundedBox } from "@react-three/drei";
+import { Canvas, useFrame  } from "@react-three/fiber";
+import { Text, Box, RoundedBox } from "@react-three/drei";
 import { Section } from "./components/section";
+
+import { ThinFilmFresnelMap } from './ThinFilmFresnelMap'
+import { mirrorsData } from './data'
 
 const TEXT_PROPS = {
   fontSize: 1,
@@ -17,6 +20,52 @@ function Title() {
     <Text material-toneMapped={false} {...TEXT_PROPS}>
       TALON
     </Text>
+  );
+}
+
+function Mirror({ sideMaterial, reflectionMaterial, args, ...props }) {
+  const ref = useRef()
+
+  useFrame(() => {
+    ref.current.rotation.y += 0.001
+    ref.current.rotation.z += 0.01
+  })
+  
+  return (
+    <Box {...props} 
+      ref={ref} 
+      args={args}
+      material={[
+        sideMaterial,
+        sideMaterial,
+        sideMaterial,
+        sideMaterial,
+        reflectionMaterial,
+        reflectionMaterial
+      ]}
+    />
+  )
+}
+
+function Mirrors({ envMap }) {
+  const sideMaterial = useState();
+  const reflectionMaterial = useState();
+  const [thinFilmFresnelMap] = useState(new ThinFilmFresnelMap());
+
+  return (
+    <>
+      <meshLambertMaterial ref={sideMaterial} map={thinFilmFresnelMap} color={0xaaaaaa} />
+      <meshLambertMaterial ref={reflectionMaterial} map={thinFilmFresnelMap} envMap={envMap} />
+
+      {mirrorsData.mirrors.map((mirror, index) => (
+        <Mirror
+          key={`mirror-${index}`}
+          {...mirror}
+          sideMaterial={sideMaterial.current}
+          reflectionMaterial={reflectionMaterial.current}
+        />
+      ))}
+    </>
   );
 }
 
