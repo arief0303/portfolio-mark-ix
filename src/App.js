@@ -1,4 +1,3 @@
-//Components
 import "./App.scss";
 import * as THREE from "three";
 import React, { useEffect, useMemo,  useState, useRef } from "react";
@@ -10,11 +9,11 @@ import { OrbitControls } from "@react-three/drei";
 // import { useMatcapTexture, Octahedron } from "@react-three/drei";
 import { Section } from "./components/section";
 
-import { ThinFilmFresnelMap } from "./ThinFilmFresnelMap";
-import { mirrorsData } from "./data";
+import { ThinFilmFresnelMap } from "./components/ThinFilmFresnelMap";
+import { mirrorsData } from "./components/data";
 
 // import useSlerp from "./use-slerp";
-import useLayers from "./use-layers";
+import useLayers from "./components/use-layers";
 // import useRenderTarget from "./use-render-target";
 
 const TEXT_PROPS = {
@@ -22,14 +21,6 @@ const TEXT_PROPS = {
   font:
     "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
 };
-
-// function Title() {
-//   return (
-//     <Text material-toneMapped={false} {...TEXT_PROPS}>
-//       TALON
-//     </Text>
-//   );
-// }
 
 function Title({ layers, ...props }) {
   const group = useRef();
@@ -49,7 +40,7 @@ function Title({ layers, ...props }) {
         material-color="#FFFFFF"
         {...TEXT_PROPS}
       >
-        TALON
+        ARV
       </Text>
     </group>
   );
@@ -128,31 +119,6 @@ function Mirrors({ envMap, layers, ...props }) {
     </group>
   );
 }
-
-// const Lights = () => {
-//   return (
-//     <>
-//       {/* Ambient Light illuminates lights for all objects */}
-//       <ambientLight intensity={0.3} />
-//       {/* Diretion light */}
-//       <directionalLight position={[10, 10, 5]} intensity={1} />
-//       <directionalLight
-//         castShadow
-//         position={[0, 10, 0]}
-//         intensity={1.5}
-//         shadow-mapSize-width={1024}
-//         shadow-mapSize-height={1024}
-//         shadow-camera-far={50}
-//         shadow-camera-left={-10}
-//         shadow-camera-right={10}
-//         shadow-camera-top={10}
-//         shadow-camera-bottom={-10}
-//       />
-//       {/* Spotlight Large overhead light */}
-//       <spotLight intensity={1} position={[1000, 0, 0]} castShadow />
-//     </>
-//   );
-// };
 
 function Scene() {
   const [renderTarget] = useState(new THREE.WebGLCubeRenderTarget(1024));
