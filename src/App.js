@@ -2,7 +2,7 @@
 import "./App.scss";
 import React, { useRef, useState } from "react";
 import Header from "./components/header";
-import { Canvas, useFrame  } from "react-three-fiber";
+import { Canvas, useFrame, useResource } from "react-three-fiber";
 import { Text, Box, RoundedBox } from "@react-three/drei";
 import { Section } from "./components/section";
 
@@ -47,36 +47,12 @@ function Mirror({ sideMaterial, reflectionMaterial, args, ...props }) {
   )
 }
 
-// function Mirrors({ envMap }) {
-  // const sideMaterial = useState();
-  // const reflectionMaterial = useState();
-  // const [thinFilmFresnelMap] = useState(new ThinFilmFresnelMap());
 
-  // // const [current, ref] = useState()
-
-  // // const ref = useResource()
-
-  // return (
-    // <>
-      {/* <meshLambertMaterial ref={sideMaterial} map={thinFilmFresnelMap} color={0xaaaaaa} /> */}
-      {/* <meshLambertMaterial ref={reflectionMaterial} map={thinFilmFresnelMap} envMap={envMap} /> */}
-{/*  */}
-      {/* {mirrorsData.mirrors.map((mirror, index) => ( */}
-        // <Mirror
-          // key={`mirror-${index}`}
-          // {...mirror}
-          // sideMaterial={sideMaterial.current}
-          // reflectionMaterial={reflectionMaterial.current}
-        // />
-      // ))}
-    {/* </> */}
-  // );
-// }
 
 function Mirrors({ envMap, layers, ...props }) {
   const [thinFilmFresnelMap] = useState(new ThinFilmFresnelMap())
-  const sideMaterial = useState()
-  const reflectionMaterial = useState()
+  const sideMaterial = useResource()
+  const reflectionMaterial = useResource()
 
   return (
     <group name="mirrors" {...props}>
@@ -104,9 +80,6 @@ export default function App() {
         <Section factor={1} offset={0}>
           <group position={[0, 0, 0]}>
             <Title />
-            <RoundedBox args={[1, 1, 1]} radius={0.05} smoothness={4}>
-              <meshPhongMaterial attach="material" color="#f3f3f3" wireframe />
-            </RoundedBox>
             <Mirrors />
           </group>
         </Section>
