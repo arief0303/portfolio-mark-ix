@@ -1,7 +1,7 @@
 //Components
 import "./App.scss";
 import * as THREE from "three";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useMemo,  useState, useRef } from "react";
 import Header from "./components/header";
 import { Canvas, useFrame, useResource } from "react-three-fiber";
 import { Text, Box } from "@react-three/drei";
@@ -31,20 +31,42 @@ const TEXT_PROPS = {
 // }
 
 function Title({ layers, ...props }) {
-  const group = useRef()
+  const group = useRef();
   useEffect(() => {
-    group.current.lookAt(0, 0, 0)
-  }, [])
+    group.current.lookAt(0, 0, 0);
+  }, []);
 
-  const textRef = useLayers(layers)
+  const textRef = useLayers(layers);
 
   return (
     <group {...props} ref={group}>
-      <Text ref={textRef} name="text-talon" depthTest={false} material-toneMapped={false} material-color="#FFFFFF" {...TEXT_PROPS}>
+      <Text
+        ref={textRef}
+        name="text-talon"
+        depthTest={false}
+        material-toneMapped={false}
+        material-color="#FFFFFF"
+        {...TEXT_PROPS}
+      >
         TALON
       </Text>
     </group>
-  )
+  );
+}
+
+function TitleCopies({ layers }) {
+  const vertices = useMemo(() => {
+    const y = new THREE.IcosahedronGeometry(8);
+    return y.vertices;
+  }, []);
+
+  return (
+    <group name="titleCopies">
+      {vertices.map((vertex, i) => (
+        <Title name={"titleCopy-" + i} position={vertex} layers={layers} />
+      ))}
+    </group>
+  );
 }
 
 function Mirror({ sideMaterial, reflectionMaterial, args, layers, ...props }) {
@@ -160,6 +182,8 @@ function Scene() {
             args={[0.1, 100, renderTarget]}
           />
           <Title name="title" position={[0, 0, -10]} />
+          <TitleCopies layers={[11]} />
+
           {/* <Mirrors /> */}
           <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
           {/* <Lights /> */}
