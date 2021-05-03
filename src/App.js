@@ -21,7 +21,7 @@ import useLayers from "./components/use-layers";
 // import useRenderTarget from "./use-render-target";
 
 const TEXT_PROPS = {
-  fontSize: 2.5,
+  fontSize: 1.5,
   font:
     "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
 };
@@ -44,26 +44,11 @@ function Title({ layers, ...props }) {
         material-color="#FFFFFF"
         {...TEXT_PROPS}
       >
-        ARV
+        FRONT-END DEV
       </Text>
     </group>
   );
 }
-
-// function ({ layers, ...props }) {
-//   const group = useRef();
-//   useEffect(() => {
-//     group.current.lookAt(0, 0, 0);
-//   }, []);
-
-//   const textRef = useLayers(layers);
-
-//   return (
-//     <group {...props} ref={group}>
-
-//     </group>
-//   );
-// }
 
 function TitleCopies({ layers }) {
   const vertices = useMemo(() => {
