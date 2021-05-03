@@ -1,13 +1,17 @@
 import "./App.scss";
 import * as THREE from "three";
-import React, { useEffect, useMemo,  useState, useRef } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
 import Header from "./components/header";
 import { Canvas, useFrame, useResource } from "react-three-fiber";
 import { Text, Box } from "@react-three/drei";
 import { Sky } from "@react-three/drei";
-import { OrbitControls } from "@react-three/drei";
+
+//Dev Tools
+// import { OrbitControls } from "@react-three/drei";
 // import { useMatcapTexture, Octahedron } from "@react-three/drei";
+
 import { Section } from "./components/section";
+import state from "./components/state";
 
 import { ThinFilmFresnelMap } from "./components/ThinFilmFresnelMap";
 import { mirrorsData } from "./components/data";
@@ -45,6 +49,21 @@ function Title({ layers, ...props }) {
     </group>
   );
 }
+
+// function ({ layers, ...props }) {
+//   const group = useRef();
+//   useEffect(() => {
+//     group.current.lookAt(0, 0, 0);
+//   }, []);
+
+//   const textRef = useLayers(layers);
+
+//   return (
+//     <group {...props} ref={group}>
+
+//     </group>
+//   );
+// }
 
 function TitleCopies({ layers }) {
   const vertices = useMemo(() => {
@@ -94,7 +113,7 @@ function Mirrors({ envMap, layers, ...props }) {
   const reflectionMaterial = useResource();
 
   return (
-    <group name="mirrors" {...props}>
+    <group name="mirrors" position={[0, 0, 0]} {...props}>
       <meshLambertMaterial
         ref={sideMaterial}
         map={thinFilmFresnelMap}
@@ -130,7 +149,7 @@ function Scene() {
 
   return (
     <>
-      <Section factor={1} offset={0}>
+      <Section factor={1.5} offset={0}>
         <group position={[0, 0, 0]}>
           <Sky
             layers={[11]}
@@ -140,6 +159,7 @@ function Scene() {
             mieCoefficient={0.0005}
             mieDirectionalG={0.8}
           />
+
           <cubeCamera
             layers={[11]}
             name="cubeCamera"
@@ -148,14 +168,26 @@ function Scene() {
             // i. notice how the renderTarget is passed as a constructor argument of the cubeCamera object
             args={[0.1, 100, renderTarget]}
           />
+
           <Title name="title" position={[0, 0, -10]} />
           <TitleCopies layers={[11]} />
 
-          {/* <Mirrors /> */}
           <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
-          {/* <Lights /> */}
-          <OrbitControls />
           <ambientLight intensity={0.4} />
+          {/* <Lights /> */}
+          {/* <OrbitControls /> */}
+        </group>
+      </Section>
+      <Section factor={1.2} offset={1}>
+        <group position={[-5, 0, -10]}>
+          <Text
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            TALON
+          </Text>
         </group>
       </Section>
       {/* <Block factor={1.2} offset={5.7}> */}
@@ -164,13 +196,28 @@ function Scene() {
 }
 
 export default function App() {
+  const scrollArea = useRef();
+  const domContent = useRef();
+  const [events] = useState();
+  const onScroll = (e) => (state.top.current = e.target.scrollTop);
+  useEffect(() => void onScroll({ target: scrollArea.current }), []);
+
   return (
     <>
       <Header />
-      {/* <Canvas camera={{ position: [0, 0, 5], fov: 70 }}> */}
-      <Canvas concurrent shadowMap camera={{ position: [0, 0, 5], fov: 70 }}>
+      <Canvas camera={{ position: [0, 0, 5], fov: 70 }}>
+        {/* <Canvas concurrent shadowMap camera={{ position: [0, 0, 120], fov: 70 }}> */}
         <Scene />
       </Canvas>
+      <div
+        className="scrollArea"
+        ref={scrollArea}
+        onScroll={onScroll}
+        {...events}
+      >
+        <div style={{ position: "sticky", top: 0 }} ref={domContent} />
+        <div style={{ height: `${state.pages * 100}vh` }} />
+      </div>
     </>
   );
 }

@@ -5,7 +5,7 @@ export default function Header() {
     <header>
       <div className='header-inner'>
         <div className='logo'>ARV</div>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <a href='/'>work</a>
@@ -17,7 +17,7 @@ export default function Header() {
               <a href='/'>discover</a>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </div>
     </header>
   );
