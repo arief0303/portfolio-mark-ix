@@ -24,7 +24,7 @@ import useLayers from "./components/use-layers";
 // import useRenderTarget from "./use-render-target";
 
 const TEXT_PROPS = {
-  fontSize: 1.5,
+  fontSize: 1.25,
   font:
     "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
 };
@@ -47,7 +47,7 @@ function Title({ layers, ...props }) {
         material-color="#FFFFFF"
         {...TEXT_PROPS}
       >
-        FRONT-END DEV
+        AR-V Portfolio
       </Text>
     </group>
   );
@@ -162,7 +162,19 @@ function Content() {
         </group>
       </Section>
       <Section factor={1} offset={1}>
-        <group position={[3, 0, -10]}>
+        <group position={[0, 0, -10]}>
+          <Text
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            FRONT-END DEVELOPER
+          </Text>
+        </group>
+      </Section>
+      <Section factor={1} offset={2}>
+        <group position={[-1, 0, -10]}>
           <Text
             depthTest={false}
             material-toneMapped={false}
@@ -173,7 +185,7 @@ function Content() {
           </Text>
         </group>
       </Section>
-      <Section factor={2} offset={2}>
+      <Section factor={1} offset={3}>
         <group position={[-1, 0, -10]}>
           <Text
             depthTest={false}
