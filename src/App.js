@@ -47,26 +47,53 @@ function Mirror({ sideMaterial, reflectionMaterial, args, ...props }) {
   )
 }
 
-function Mirrors({ envMap }) {
-  const sideMaterial = useState();
-  const reflectionMaterial = useState();
-  const [thinFilmFresnelMap] = useState(new ThinFilmFresnelMap());
+// function Mirrors({ envMap }) {
+  // const sideMaterial = useState();
+  // const reflectionMaterial = useState();
+  // const [thinFilmFresnelMap] = useState(new ThinFilmFresnelMap());
+
+  // // const [current, ref] = useState()
+
+  // // const ref = useResource()
+
+  // return (
+    // <>
+      {/* <meshLambertMaterial ref={sideMaterial} map={thinFilmFresnelMap} color={0xaaaaaa} /> */}
+      {/* <meshLambertMaterial ref={reflectionMaterial} map={thinFilmFresnelMap} envMap={envMap} /> */}
+{/*  */}
+      {/* {mirrorsData.mirrors.map((mirror, index) => ( */}
+        // <Mirror
+          // key={`mirror-${index}`}
+          // {...mirror}
+          // sideMaterial={sideMaterial.current}
+          // reflectionMaterial={reflectionMaterial.current}
+        // />
+      // ))}
+    {/* </> */}
+  // );
+// }
+
+function Mirrors({ envMap, layers, ...props }) {
+  const [thinFilmFresnelMap] = useState(new ThinFilmFresnelMap())
+  const sideMaterial = useState()
+  const reflectionMaterial = useState()
 
   return (
-    <>
-      <meshLambertMaterial ref={sideMaterial} map={thinFilmFresnelMap} color={0xaaaaaa} />
-      <meshLambertMaterial ref={reflectionMaterial} map={thinFilmFresnelMap} envMap={envMap} />
-
+    <group name="mirrors" {...props}>
+      <meshLambertMaterial ref={sideMaterial} map={thinFilmFresnelMap} color="#AAAAAA" />
+      <meshLambertMaterial ref={reflectionMaterial} map={thinFilmFresnelMap} envMap={envMap} color="#FFFFFF" />
       {mirrorsData.mirrors.map((mirror, index) => (
         <Mirror
           key={`mirror-${index}`}
+          layers={layers}
           {...mirror}
+          name={`mirror-${index}`}
           sideMaterial={sideMaterial.current}
           reflectionMaterial={reflectionMaterial.current}
         />
       ))}
-    </>
-  );
+    </group>
+  )
 }
 
 export default function App() {
@@ -80,6 +107,7 @@ export default function App() {
             <RoundedBox args={[1, 1, 1]} radius={0.05} smoothness={4}>
               <meshPhongMaterial attach="material" color="#f3f3f3" wireframe />
             </RoundedBox>
+            <Mirrors />
           </group>
         </Section>
         {/* <Block factor={1.2} offset={5.7}> */}
