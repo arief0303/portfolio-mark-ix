@@ -41,7 +41,7 @@ function Title({ layers, ...props }) {
     <group {...props} ref={group}>
       <Text
         ref={textRef}
-        name="text-talon"
+        name="title"
         depthTest={false}
         material-toneMapped={false}
         material-color="#FFFFFF"
@@ -128,9 +128,6 @@ function Mirrors({ envMap, layers, ...props }) {
 }
 
 function Content() {
-  // const [renderTarget] = useState(new THREE.WebGLCubeRenderTarget(1024));
-  // const cubeCamera = useRef();
-
   const group = useSlerp();
   const [cubeCamera, renderTarget] = useRenderTarget();
 
@@ -150,34 +147,41 @@ function Content() {
             mieCoefficient={0.0005}
             mieDirectionalG={0.8}
           />
-
           <cubeCamera
             layers={[11]}
             name="cubeCamera"
             ref={cubeCamera}
             position={[0, 0, 0]}
-            // i. notice how the renderTarget is passed as a constructor argument of the cubeCamera object
             args={[0.1, 100, renderTarget]}
           />
-
           <Title name="title" position={[0, 0, -10]} />
           <TitleCopies layers={[11]} />
-
           <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
           <ambientLight intensity={0.4} />
-          {/* <Lights /> */}
           {/* <OrbitControls /> */}
         </group>
       </Section>
-      <Section factor={1.2} offset={1}>
-        <group position={[-5, 0, -10]}>
+      <Section factor={1} offset={1}>
+        <group position={[3, 0, -10]}>
           <Text
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            TALON
+            3D Artist
+          </Text>
+        </group>
+      </Section>
+      <Section factor={2} offset={2}>
+        <group position={[-1, 0, -10]}>
+          <Text
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            AI DEVELOPER
           </Text>
         </group>
       </Section>
@@ -190,8 +194,8 @@ export default function App() {
   const scrollArea = useRef();
   const domContent = useRef();
   const [events] = useState();
-  // const onScroll = (e) => (state.top.current = e.target.scrollTop);
-  // useEffect(() => void onScroll({ target: scrollArea.current }), []);
+  const onScroll = (e) => (state.top.current = e.target.scrollTop);
+  useEffect(() => void onScroll({ target: scrollArea.current }), []);
 
   return (
     <>
@@ -200,7 +204,7 @@ export default function App() {
         {/* <Canvas concurrent shadowMap camera={{ position: [0, 0, 120], fov: 70 }}> */}
         <Content />
       </Canvas>
-      {/* <div
+      <div
         className="scrollArea"
         ref={scrollArea}
         onScroll={onScroll}
@@ -208,7 +212,7 @@ export default function App() {
       >
         <div style={{ position: "sticky", top: 0 }} ref={domContent} />
         <div style={{ height: `${state.pages * 100}vh` }} />
-      </div> */}
+      </div>
     </>
   );
 }
