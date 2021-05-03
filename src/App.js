@@ -88,35 +88,36 @@ function Mirrors({ envMap, layers, ...props }) {
   );
 }
 
-const Lights = () => {
-  return (
-    <>
-      {/* Ambient Light illuminates lights for all objects */}
-      <ambientLight intensity={0.3} />
-      {/* Diretion light */}
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <directionalLight
-        castShadow
-        position={[0, 10, 0]}
-        intensity={1.5}
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
-        shadow-camera-far={50}
-        shadow-camera-left={-10}
-        shadow-camera-right={10}
-        shadow-camera-top={10}
-        shadow-camera-bottom={-10}
-      />
-      {/* Spotlight Large overhead light */}
-      <spotLight intensity={1} position={[1000, 0, 0]} castShadow />
-    </>
-  );
-};
+// const Lights = () => {
+//   return (
+//     <>
+//       {/* Ambient Light illuminates lights for all objects */}
+//       <ambientLight intensity={0.3} />
+//       {/* Diretion light */}
+//       <directionalLight position={[10, 10, 5]} intensity={1} />
+//       <directionalLight
+//         castShadow
+//         position={[0, 10, 0]}
+//         intensity={1.5}
+//         shadow-mapSize-width={1024}
+//         shadow-mapSize-height={1024}
+//         shadow-camera-far={50}
+//         shadow-camera-left={-10}
+//         shadow-camera-right={10}
+//         shadow-camera-top={10}
+//         shadow-camera-bottom={-10}
+//       />
+//       {/* Spotlight Large overhead light */}
+//       <spotLight intensity={1} position={[1000, 0, 0]} castShadow />
+//     </>
+//   );
+// };
 
 export default function App() {
   const [renderTarget] = useState(new THREE.WebGLCubeRenderTarget(1024));
   const cubeCamera = useRef();
 
+  // SOLVE ERROR
   // useFrame(({ gl, scene }) => {
   //   cubeCamera.current.update(gl, scene);
   // });
@@ -128,7 +129,6 @@ export default function App() {
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 5], fov: 70 }}>
         <Section factor={1} offset={0}>
           <group position={[0, 0, 0]}>
-            <Lights />
             <cubeCamera
               layers={[11]}
               name="cubeCamera"
@@ -140,6 +140,8 @@ export default function App() {
             <Title />
             {/* <Mirrors /> */}
             <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
+            {/* <Lights /> */}
+            <ambientLight intensity={0.4} />
           </group>
         </Section>
         {/* <Block factor={1.2} offset={5.7}> */}
