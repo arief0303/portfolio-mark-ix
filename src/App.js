@@ -139,7 +139,7 @@ function Mirrors({ envMap, layers, ...props }) {
   );
 }
 
-function Scene() {
+function Content() {
   const [renderTarget] = useState(new THREE.WebGLCubeRenderTarget(1024));
   const cubeCamera = useRef();
 
@@ -207,7 +207,7 @@ export default function App() {
       <Header />
       <Canvas camera={{ position: [0, 0, 5], fov: 70 }}>
         {/* <Canvas concurrent shadowMap camera={{ position: [0, 0, 120], fov: 70 }}> */}
-        <Scene />
+        <Content />
       </Canvas>
       <div
         className="scrollArea"
