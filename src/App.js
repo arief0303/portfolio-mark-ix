@@ -2,7 +2,7 @@
 import "./App.scss";
 import React, { useRef, useState } from "react";
 import Header from "./components/header";
-import { Canvas, useFrame  } from "@react-three/fiber";
+import { Canvas, useFrame  } from "react-three-fiber";
 import { Text, Box, RoundedBox } from "@react-three/drei";
 import { Section } from "./components/section";
 

@@ -1,5 +1,5 @@
 import React, { createContext, useRef, useContext } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame, useThree } from "react-three-fiber";
 import state from "./state";
 import lerp from "lerp"; //fix issue
 // const lerp = require('lerp');
