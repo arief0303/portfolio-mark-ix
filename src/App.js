@@ -5,7 +5,8 @@ import React, { useEffect, useMemo,  useState, useRef } from "react";
 import Header from "./components/header";
 import { Canvas, useFrame, useResource } from "react-three-fiber";
 import { Text, Box } from "@react-three/drei";
-import { OrbitControls, Sky } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 // import { useMatcapTexture, Octahedron } from "@react-three/drei";
 import { Section } from "./components/section";
 
