@@ -6,6 +6,9 @@ import { Canvas, useFrame, useResource } from "react-three-fiber";
 import { Text, Box } from "@react-three/drei";
 import { Sky } from "@react-three/drei";
 
+import useSlerp from "./components/use-slerp";
+import useRenderTarget from "./components/use-render-target";
+
 //Dev Tools
 // import { OrbitControls } from "@react-three/drei";
 // import { useMatcapTexture, Octahedron } from "@react-three/drei";
@@ -125,8 +128,11 @@ function Mirrors({ envMap, layers, ...props }) {
 }
 
 function Content() {
-  const [renderTarget] = useState(new THREE.WebGLCubeRenderTarget(1024));
-  const cubeCamera = useRef();
+  // const [renderTarget] = useState(new THREE.WebGLCubeRenderTarget(1024));
+  // const cubeCamera = useRef();
+
+  const group = useSlerp();
+  const [cubeCamera, renderTarget] = useRenderTarget();
 
   useFrame(({ gl, scene }) => {
     cubeCamera.current.update(gl, scene);
@@ -135,7 +141,7 @@ function Content() {
   return (
     <>
       <Section factor={1.5} offset={0}>
-        <group position={[0, 0, 0]}>
+        <group position={[0, 0, 0]} ref={group}>
           <Sky
             layers={[11]}
             sunPosition={[Math.PI, 0, Math.PI / 2]}
@@ -184,8 +190,8 @@ export default function App() {
   const scrollArea = useRef();
   const domContent = useRef();
   const [events] = useState();
-  const onScroll = (e) => (state.top.current = e.target.scrollTop);
-  useEffect(() => void onScroll({ target: scrollArea.current }), []);
+  // const onScroll = (e) => (state.top.current = e.target.scrollTop);
+  // useEffect(() => void onScroll({ target: scrollArea.current }), []);
 
   return (
     <>
@@ -194,7 +200,7 @@ export default function App() {
         {/* <Canvas concurrent shadowMap camera={{ position: [0, 0, 120], fov: 70 }}> */}
         <Content />
       </Canvas>
-      <div
+      {/* <div
         className="scrollArea"
         ref={scrollArea}
         onScroll={onScroll}
@@ -202,7 +208,7 @@ export default function App() {
       >
         <div style={{ position: "sticky", top: 0 }} ref={domContent} />
         <div style={{ height: `${state.pages * 100}vh` }} />
-      </div>
+      </div> */}
     </>
   );
 }
