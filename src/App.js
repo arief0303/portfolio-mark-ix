@@ -1,30 +1,24 @@
-import * as THREE from "three";
-import React, { useEffect, useMemo, useState, useRef } from "react";
-import { Suspense } from "react";
-import Header from "./components/header";
+import React, { useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { Canvas, useFrame, useResource } from "react-three-fiber";
+import { a, useTransition } from "@react-spring/web";
+import { useProgress } from "@react-three/drei";
 import { Text, Box } from "@react-three/drei";
 import { Sky } from "@react-three/drei";
-import { useProgress } from "@react-three/drei";
-import { a, useTransition } from "@react-spring/web";
+import * as THREE from "three";
 import "./App.scss";
 
-import useSlerp from "./components/use-slerp";
+import { ThinFilmFresnelMap } from "./components/ThinFilmFresnelMap";
 import useRenderTarget from "./components/use-render-target";
+import { mirrorsData } from "./components/data";
+import useLayers from "./components/use-layers";
+import { Section } from "./components/section";
+import useSlerp from "./components/use-slerp";
+import Header from "./components/header";
+import state from "./components/state";
 
 //Dev Tools
 // import { OrbitControls } from "@react-three/drei";
 // import { useMatcapTexture, Octahedron } from "@react-three/drei";
-
-import { Section } from "./components/section";
-import state from "./components/state";
-
-import { ThinFilmFresnelMap } from "./components/ThinFilmFresnelMap";
-import { mirrorsData } from "./components/data";
-
-// import useSlerp from "./use-slerp";
-import useLayers from "./components/use-layers";
-// import useRenderTarget from "./use-render-target";
 
 function Loader() {
   const { active, progress } = useProgress();
