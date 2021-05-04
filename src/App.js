@@ -1,10 +1,13 @@
-import "./App.scss";
 import * as THREE from "three";
 import React, { useEffect, useMemo, useState, useRef } from "react";
+import { Suspense } from "react";
 import Header from "./components/header";
 import { Canvas, useFrame, useResource } from "react-three-fiber";
 import { Text, Box } from "@react-three/drei";
 import { Sky } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
+import { a, useTransition } from "@react-spring/web";
+import "./App.scss";
 
 import useSlerp from "./components/use-slerp";
 import useRenderTarget from "./components/use-render-target";
@@ -23,8 +26,27 @@ import { mirrorsData } from "./components/data";
 import useLayers from "./components/use-layers";
 // import useRenderTarget from "./use-render-target";
 
+function Loader() {
+  const { active, progress } = useProgress();
+  const transition = useTransition(active, {
+    from: { opacity: 1, progress: 0 },
+    leave: { opacity: 0 },
+    update: { progress },
+  });
+  return transition(
+    ({ progress, opacity }, active) =>
+      active && (
+        <a.div className='loading' style={{ opacity }}>
+          <div className='loading-bar-container'>
+            <a.div className='loading-bar' style={{ width: progress }}></a.div>
+          </div>
+        </a.div>
+      )
+  );
+}
+
 const TEXT_PROPS = {
-  fontSize: 1.25,
+  // fontSize: 1.25,
   font:
     "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
 };
@@ -45,9 +67,10 @@ function Title({ layers, ...props }) {
         depthTest={false}
         material-toneMapped={false}
         material-color="#FFFFFF"
+        fontSize={1.25}
         {...TEXT_PROPS}
       >
-        AR-V Portfolio
+        Portfolio
       </Text>
     </group>
   );
@@ -163,14 +186,28 @@ function Content() {
       </Section>
       <Section factor={1} offset={1}>
         <group position={[0, 0, -10]}>
-          <Text
-            depthTest={false}
-            material-toneMapped={false}
-            material-color="#FFFFFF"
-            {...TEXT_PROPS}
-          >
-            FRONT-END DEVELOPER
-          </Text>
+          <group>
+            <Text
+              depthTest={false}
+              material-toneMapped={false}
+              material-color="#FFFFFF"
+              fontSize={1}
+              {...TEXT_PROPS}
+            >
+              FRONT-END
+            </Text>
+          </group>
+          <group position={[0, -1, 0]}>
+            <Text
+              depthTest={false}
+              material-toneMapped={false}
+              material-color="#FFFFFF"
+              fontSize={1}
+              {...TEXT_PROPS}
+            >
+              DEVELOPER
+            </Text>
+          </group>
         </group>
       </Section>
       <Section factor={1} offset={2}>
@@ -179,18 +216,20 @@ function Content() {
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
+            fontSize={1}
             {...TEXT_PROPS}
           >
-            3D Artist
+            3D DEVELOPER
           </Text>
         </group>
       </Section>
       <Section factor={1} offset={3}>
-        <group position={[-1, 0, -10]}>
+        <group position={[1, 0, -10]}>
           <Text
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
+            fontSize={1}
             {...TEXT_PROPS}
           >
             AI DEVELOPER
@@ -214,8 +253,11 @@ export default function App() {
       <Header />
       <Canvas camera={{ position: [0, 0, 5], fov: 70 }}>
         {/* <Canvas concurrent shadowMap camera={{ position: [0, 0, 120], fov: 70 }}> */}
-        <Content />
+        <Suspense fallback={null}>
+          <Content />
+        </Suspense>
       </Canvas>
+      <Loader />
       <div
         className="scrollArea"
         ref={scrollArea}
