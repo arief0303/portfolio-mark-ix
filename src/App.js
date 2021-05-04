@@ -64,7 +64,7 @@ function Title({ layers, ...props }) {
         fontSize={1.25}
         {...TEXT_PROPS}
       >
-        Portfolio
+        Coming Soon
       </Text>
     </group>
   );
@@ -236,11 +236,11 @@ function Content() {
 }
 
 export default function App() {
-  const scrollArea = useRef();
-  const domContent = useRef();
-  const [events] = useState();
-  const onScroll = (e) => (state.top.current = e.target.scrollTop);
-  useEffect(() => void onScroll({ target: scrollArea.current }), []);
+  // const scrollArea = useRef();
+  // const domContent = useRef();
+  // const [events] = useState();
+  // const onScroll = (e) => (state.top.current = e.target.scrollTop);
+  // useEffect(() => void onScroll({ target: scrollArea.current }), []);
 
   return (
     <>
@@ -252,7 +252,7 @@ export default function App() {
         </Suspense>
       </Canvas>
       <Loader />
-      <div
+      {/* <div
         className="scrollArea"
         ref={scrollArea}
         onScroll={onScroll}
@@ -260,7 +260,7 @@ export default function App() {
       >
         <div style={{ position: "sticky", top: 0 }} ref={domContent} />
         <div style={{ height: `${state.pages * 100}vh` }} />
-      </div>
+      </div> */}
     </>
   );
 }
