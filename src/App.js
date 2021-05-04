@@ -42,7 +42,7 @@ function Loader() {
 const TEXT_PROPS = {
   // fontSize: 1.25,
   font:
-    "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
+    "./KronaOne-Regular.ttf",
 };
 
 function Title({ layers, ...props }) {
