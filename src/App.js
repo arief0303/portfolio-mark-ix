@@ -235,7 +235,7 @@ function Content() {
             <Html
               center
               layers={[0]}
-              position={[0, -4.5, 0]}
+              position={[0, -5, 0]}
               style={{ width: "70vw" }}
             >
               <p className="text">
