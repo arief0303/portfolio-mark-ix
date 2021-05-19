@@ -12,7 +12,7 @@ import useRenderTarget from "./components/use-render-target";
 import { mirrorsData } from "./components/data";
 import useLayers from "./components/use-layers";
 import { Section } from "./components/section";
-import useSlerp from "./components/use-slerp";
+// import useSlerp from "./components/use-slerp";
 import Header from "./components/header";
 import state from "./components/state";
 
