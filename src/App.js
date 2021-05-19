@@ -20,25 +20,6 @@ import state from "./components/state";
 // import { useMatcapTexture, Octahedron } from "@react-three/drei";
 // import { OrbitControls } from "@react-three/drei";
 
-function Loader() {
-  const { active, progress } = useProgress();
-  const transition = useTransition(active, {
-    from: { opacity: 1, progress: 0 },
-    leave: { opacity: 0 },
-    update: { progress },
-  });
-  return transition(
-    ({ progress, opacity }, active) =>
-      active && (
-        <a.div className="loading" style={{ opacity }}>
-          <div className="loading-bar-container">
-            <a.div className="loading-bar" style={{ width: progress }}></a.div>
-          </div>
-        </a.div>
-      )
-  );
-}
-
 const TEXT_PROPS = {
   // fontSize: 1.25,
   fontSize: 1,
@@ -185,19 +166,18 @@ function Content() {
               depthTest={false}
               material-toneMapped={false}
               material-color="#FFFFFF"
-              fontSize={1}
               {...TEXT_PROPS}
             >
               FRONT-END
             </Text>
-            <Html center position={[-0.6, -5, 0]} style={{width: '80vw'}}>
-              <h1 className="text">
+            <Html center position={[0, -5, 0]} style={{ width: "70vw" }}>
+              <p className="text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                 euismod odio eu dui tempus consequat. Interdum et malesuada
                 fames ac ante ipsum primis in faucibus. Ut venenatis nibh quis
                 purus dignissim, ornare iaculis ipsum imperdiet. Duis lobortis
                 fringilla est, eget ultrices sem faucibus a.
-              </h1>
+              </p>
             </Html>
           </group>
           <group position={[0, -1, 0]}>
@@ -213,7 +193,7 @@ function Content() {
         </group>
       </Section>
       <Section factor={1} offset={2}>
-        <group position={[-1, 0, -10]}>
+        <group position={[0, 0, -10]}>
           <Text
             depthTest={false}
             material-toneMapped={false}
@@ -225,7 +205,7 @@ function Content() {
         </group>
       </Section>
       <Section factor={1} offset={3}>
-        <group position={[1, 0, -10]}>
+        <group position={[0, 0, -10]}>
           <Text
             depthTest={false}
             material-toneMapped={false}
@@ -238,6 +218,25 @@ function Content() {
       </Section>
       {/* <Block factor={1.2} offset={5.7}> */}
     </>
+  );
+}
+
+function Loader() {
+  const { active, progress } = useProgress();
+  const transition = useTransition(active, {
+    from: { opacity: 1, progress: 0 },
+    leave: { opacity: 0 },
+    update: { progress },
+  });
+  return transition(
+    ({ progress, opacity }, active) =>
+      active && (
+        <a.div className="loading" style={{ opacity }}>
+          <div className="loading-bar-container">
+            <a.div className="loading-bar" style={{ width: progress }}></a.div>
+          </div>
+        </a.div>
+      )
   );
 }
 
