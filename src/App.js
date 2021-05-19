@@ -1,15 +1,22 @@
 import React, { useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { Canvas, useFrame, useResource } from "react-three-fiber";
 import { a, useTransition } from "@react-spring/web";
-import { useProgress } from "@react-three/drei";
-import { Text, Box, Html } from "@react-three/drei";
-import { Sky } from "@react-three/drei";
+import {
+  Text,
+  Box,
+  Html,
+  Sky,
+  useGLTFLoader,
+  useMatcapTexture,
+  useProgress,
+} from "@react-three/drei";
 import * as THREE from "three";
 import "./App.scss";
 
 import { ThinFilmFresnelMap } from "./components/ThinFilmFresnelMap";
 import useRenderTarget from "./components/use-render-target";
 import { mirrorsData } from "./components/data";
+import { mirrorsData as diamondsData } from "./components/data";
 import useLayers from "./components/use-layers";
 import { Section } from "./components/section";
 // import useSlerp from "./components/use-slerp";
@@ -124,6 +131,49 @@ function Mirrors({ envMap, layers, ...props }) {
   );
 }
 
+function Diamond({ map, texture, matcap, layers, ...props }) {
+  const ref = useLayers(layers);
+
+  useFrame(() => {
+    if (ref.current) {
+      ref.current.rotation.y += 0.001;
+      ref.current.rotation.z += 0.01;
+    }
+  });
+
+  return (
+    <mesh ref={ref} {...props}>
+      <meshMatcapMaterial
+        matcap={matcap}
+        transparent
+        opacity={0.9}
+        color="#14CEFF"
+      />
+    </mesh>
+  );
+}
+
+function Diamonds({ layers, ...props }) {
+  const [matcapTexture] = useMatcapTexture("2E763A_78A0B7_B3D1CF_14F209");
+  const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
+
+  return (
+    <group name="diamonds" {...props}>
+      {diamondsData.mirrors.map((mirror, index) => (
+        <Diamond
+          key={`diamond-${index}`}
+          name={`diamond-${index}`}
+          {...mirror}
+          geometry={nodes.Cylinder.geometry}
+          matcap={matcapTexture}
+          scale={[0.5, 0.5, 0.5]}
+          layers={layers}
+        />
+      ))}
+    </group>
+  );
+}
+
 function Content() {
   // const group = useSlerp();
   const group = useRef();
@@ -163,6 +213,7 @@ function Content() {
       <Section factor={1} offset={1}>
         <group position={position}>
           <group>
+            <Diamonds layers={[0, 11]} position={[0,-5,10]} />
             <Text
               depthTest={false}
               material-toneMapped={false}
@@ -171,7 +222,7 @@ function Content() {
             >
               FRONT-END
             </Text>
-            <Html center position={[0, -5, 0]} style={{ width: "70vw" }}>
+            <Html center layers={[0]} position={[0, -5, 0]} style={{ width: "70vw" }}>
               <p className="text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                 euismod odio eu dui tempus consequat. Interdum et malesuada
