@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { Canvas, useFrame, useResource } from "react-three-fiber";
 import { a, useTransition } from "@react-spring/web";
 import { useProgress } from "@react-three/drei";
-import { Text, Box } from "@react-three/drei";
+import { Text, Box, Html } from "@react-three/drei";
 import { Sky } from "@react-three/drei";
 import * as THREE from "three";
 import "./App.scss";
@@ -17,8 +17,8 @@ import Header from "./components/header";
 import state from "./components/state";
 
 //Dev Tools
-// import { OrbitControls } from "@react-three/drei";
 // import { useMatcapTexture, Octahedron } from "@react-three/drei";
+// import { OrbitControls } from "@react-three/drei";
 
 function Loader() {
   const { active, progress } = useProgress();
@@ -30,9 +30,9 @@ function Loader() {
   return transition(
     ({ progress, opacity }, active) =>
       active && (
-        <a.div className='loading' style={{ opacity }}>
-          <div className='loading-bar-container'>
-            <a.div className='loading-bar' style={{ width: progress }}></a.div>
+        <a.div className="loading" style={{ opacity }}>
+          <div className="loading-bar-container">
+            <a.div className="loading-bar" style={{ width: progress }}></a.div>
           </div>
         </a.div>
       )
@@ -41,8 +41,8 @@ function Loader() {
 
 const TEXT_PROPS = {
   // fontSize: 1.25,
-  font:
-    "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
+  fontSize: 1,
+  font: "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
 };
 
 function Title({ layers, ...props }) {
@@ -61,7 +61,6 @@ function Title({ layers, ...props }) {
         depthTest={false}
         material-toneMapped={false}
         material-color="#FFFFFF"
-        fontSize={1.25}
         {...TEXT_PROPS}
       >
         Portfolio
@@ -145,7 +144,8 @@ function Mirrors({ envMap, layers, ...props }) {
 }
 
 function Content() {
-  const group = useSlerp();
+  // const group = useSlerp();
+  const group = useRef();
   const [cubeCamera, renderTarget] = useRenderTarget();
 
   useFrame(({ gl, scene }) => {
@@ -171,7 +171,7 @@ function Content() {
             position={[0, 0, 0]}
             args={[0.1, 100, renderTarget]}
           />
-          <Title name="title" position={[0, 0, -10]} />
+          <Title name="title" position={[0, 0, -6]} />
           <TitleCopies layers={[11]} />
           <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
           <ambientLight intensity={0.4} />
@@ -190,13 +190,21 @@ function Content() {
             >
               FRONT-END
             </Text>
+            <Html center position={[-0.6, -5, 0]} style={{width: '80vw'}}>
+              <h1 className="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                euismod odio eu dui tempus consequat. Interdum et malesuada
+                fames ac ante ipsum primis in faucibus. Ut venenatis nibh quis
+                purus dignissim, ornare iaculis ipsum imperdiet. Duis lobortis
+                fringilla est, eget ultrices sem faucibus a.
+              </h1>
+            </Html>
           </group>
           <group position={[0, -1, 0]}>
             <Text
               depthTest={false}
               material-toneMapped={false}
               material-color="#FFFFFF"
-              fontSize={1}
               {...TEXT_PROPS}
             >
               DEVELOPER
@@ -210,7 +218,6 @@ function Content() {
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
-            fontSize={1}
             {...TEXT_PROPS}
           >
             3D DEVELOPER
@@ -223,7 +230,6 @@ function Content() {
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
-            fontSize={1}
             {...TEXT_PROPS}
           >
             AI DEVELOPER
