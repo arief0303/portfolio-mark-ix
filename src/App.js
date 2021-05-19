@@ -128,6 +128,7 @@ function Content() {
   // const group = useSlerp();
   const group = useRef();
   const [cubeCamera, renderTarget] = useRenderTarget();
+  const position = [0, 5, -11];
 
   useFrame(({ gl, scene }) => {
     cubeCamera.current.update(gl, scene);
@@ -160,7 +161,7 @@ function Content() {
         </group>
       </Section>
       <Section factor={1} offset={1}>
-        <group position={[0, 0, -10]}>
+        <group position={position}>
           <group>
             <Text
               depthTest={false}
@@ -193,7 +194,7 @@ function Content() {
         </group>
       </Section>
       <Section factor={1} offset={2}>
-        <group position={[0, 0, -10]}>
+        <group position={position}>
           <Text
             depthTest={false}
             material-toneMapped={false}
@@ -205,7 +206,7 @@ function Content() {
         </group>
       </Section>
       <Section factor={1} offset={3}>
-        <group position={[0, 0, -10]}>
+        <group position={position}>
           <Text
             depthTest={false}
             material-toneMapped={false}
