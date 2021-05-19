@@ -213,7 +213,7 @@ function Content() {
       <Section factor={1} offset={1}>
         <group position={position}>
           <group>
-            <Diamonds layers={[0, 11]} position={[0,-5,10]} />
+            <Diamonds layers={[0, 11]} position={[0, -5, 10]} />
             <Text
               depthTest={false}
               material-toneMapped={false}
@@ -222,7 +222,22 @@ function Content() {
             >
               FRONT-END
             </Text>
-            <Html center layers={[0]} position={[0, -5, 0]} style={{ width: "70vw" }}>
+            <group position={[0, -1, 0]}>
+              <Text
+                depthTest={false}
+                material-toneMapped={false}
+                material-color="#FFFFFF"
+                {...TEXT_PROPS}
+              >
+                DEVELOPER
+              </Text>
+            </group>
+            <Html
+              center
+              layers={[0]}
+              position={[0, -4.5, 0]}
+              style={{ width: "70vw" }}
+            >
               <p className="text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                 euismod odio eu dui tempus consequat. Interdum et malesuada
@@ -231,16 +246,6 @@ function Content() {
                 fringilla est, eget ultrices sem faucibus a.
               </p>
             </Html>
-          </group>
-          <group position={[0, -1, 0]}>
-            <Text
-              depthTest={false}
-              material-toneMapped={false}
-              material-color="#FFFFFF"
-              {...TEXT_PROPS}
-            >
-              DEVELOPER
-            </Text>
           </group>
         </group>
       </Section>
