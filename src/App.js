@@ -153,8 +153,50 @@ function Diamond({ map, texture, matcap, layers, ...props }) {
   );
 }
 
-function Diamonds({ layers, ...props }) {
+function Diamonds1({ layers, ...props }) {
   const [matcapTexture] = useMatcapTexture("2E763A_78A0B7_B3D1CF_14F209");
+  const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
+
+  return (
+    <group name="diamonds" {...props}>
+      {diamondsData.mirrors.map((mirror, index) => (
+        <Diamond
+          key={`diamond-${index}`}
+          name={`diamond-${index}`}
+          {...mirror}
+          geometry={nodes.Cylinder.geometry}
+          matcap={matcapTexture}
+          scale={[0.5, 0.5, 0.5]}
+          layers={layers}
+        />
+      ))}
+    </group>
+  );
+}
+
+function Diamonds2({ layers, ...props }) {
+  const [matcapTexture] = useMatcapTexture("D0CCCB_524D50_928891_727581");
+  const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
+
+  return (
+    <group name="diamonds" {...props}>
+      {diamondsData.mirrors.map((mirror, index) => (
+        <Diamond
+          key={`diamond-${index}`}
+          name={`diamond-${index}`}
+          {...mirror}
+          geometry={nodes.Cylinder.geometry}
+          matcap={matcapTexture}
+          scale={[0.5, 0.5, 0.5]}
+          layers={layers}
+        />
+      ))}
+    </group>
+  );
+}
+
+function Diamonds3({ layers, ...props }) {
+  const [matcapTexture] = useMatcapTexture("8955D0_744CC4_EA4AEF_954DA4");
   const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
 
   return (
@@ -212,8 +254,7 @@ function Content() {
       </Section>
       <Section factor={1} offset={1}>
         <group position={position}>
-          <group>
-            <Diamonds layers={[0, 11]} position={[0, -5, 10]} />
+            <Diamonds1 rotation={[1,0,-180]} layers={[0, 11]} position={[0, -5, 7]} />
             <Text
               depthTest={false}
               material-toneMapped={false}
@@ -238,6 +279,7 @@ function Content() {
               position={[0, -5, 0]}
               style={{ width: "70vw" }}
             >
+              <p className="text">Skills: Lorem, Ipsum, Dolor</p>
               <p className="text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                 euismod odio eu dui tempus consequat. Interdum et malesuada
@@ -246,11 +288,11 @@ function Content() {
                 fringilla est, eget ultrices sem faucibus a.
               </p>
             </Html>
-          </group>
         </group>
       </Section>
       <Section factor={1} offset={2}>
         <group position={position}>
+          <Diamonds2 rotation={[1,0,-90]} layers={[0, 11]} position={[0, -5, 7]} />
           <Text
             depthTest={false}
             material-toneMapped={false}
@@ -259,10 +301,26 @@ function Content() {
           >
             3D DEVELOPER
           </Text>
+          <Html
+              center
+              layers={[0]}
+              position={[0, -5, 0]}
+              style={{ width: "70vw" }}
+            >
+              <p className="text">Skills: Lorem, Ipsum, Dolor</p>
+              <p className="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                euismod odio eu dui tempus consequat. Interdum et malesuada
+                fames ac ante ipsum primis in faucibus. Ut venenatis nibh quis
+                purus dignissim, ornare iaculis ipsum imperdiet. Duis lobortis
+                fringilla est, eget ultrices sem faucibus a.
+              </p>
+            </Html>
         </group>
       </Section>
       <Section factor={1} offset={3}>
         <group position={position}>
+        <Diamonds3 rotation={[1,0,-70]} layers={[0, 11]} position={[0, -6, 7]} />
           <Text
             depthTest={false}
             material-toneMapped={false}
@@ -271,6 +329,21 @@ function Content() {
           >
             AI DEVELOPER
           </Text>
+          <Html
+              center
+              layers={[0]}
+              position={[0, -5, 0]}
+              style={{ width: "70vw" }}
+            >
+              <p className="text">Skills: Lorem, Ipsum, Dolor</p>
+              <p className="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                euismod odio eu dui tempus consequat. Interdum et malesuada
+                fames ac ante ipsum primis in faucibus. Ut venenatis nibh quis
+                purus dignissim, ornare iaculis ipsum imperdiet. Duis lobortis
+                fringilla est, eget ultrices sem faucibus a.
+              </p>
+            </Html>
         </group>
       </Section>
       {/* <Block factor={1.2} offset={5.7}> */}
