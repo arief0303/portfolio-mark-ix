@@ -390,7 +390,7 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">
-              Past Working Experiences: <br /><br />
+              Working Experiences: <br /><br />
                 <li> Visual Jockey 2017 - 2018</li>
                 <li> Courier 2020 - present</li>
             </p>
