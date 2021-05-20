@@ -282,7 +282,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -5, 0]}
+            position={[0, -6, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">Skills: HTML, Javascript, CSS, WebGL</p>
@@ -342,7 +342,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -7, 0]}
+            position={[0, -8, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">Skills: Python, Tensorflow, OpenCV</p>
