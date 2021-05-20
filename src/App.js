@@ -391,8 +391,9 @@ function Content() {
           >
             <p className="text">
               Working Experiences: <br /><br />
-                <li> Visual Jockey 2017 - 2018</li>
-                <li> Courier 2020 - present</li>
+                <li> Freelance Visual Jockey<br />August 2017 - August 2018</li>
+                <li> Deliveroo Courier<br />December 2019 - present</li>
+                <li> Junior Front-end Developer at PT. Teknologi Kartu Indonesia<br />December 2020 - March 2021</li>
             </p>
           </Html>
         </group>
