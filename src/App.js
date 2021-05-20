@@ -381,7 +381,7 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            Info
+            Information
           </Text>
           <Html
             center
@@ -392,7 +392,7 @@ function Content() {
             <p className="text">
               Working Experiences: <br /><br />
                 <li> Freelance Visual Jockey<br />August 2017 - August 2018</li>
-                <li> Deliveroo Courier<br />December 2019 - present</li>
+                <li> Freelance Courier<br />December 2019 - present</li>
                 <li> Junior Front-end Developer at PT. Teknologi Kartu Indonesia<br />December 2020 - March 2021</li>
             </p>
           </Html>
