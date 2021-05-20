@@ -245,9 +245,12 @@ function Content() {
             position={[0, 0, 0]}
             args={[0.1, 100, renderTarget]}
           />
-          <Text font={""} fontSize="0.4" position={[-2.15, 0.6, -6.5]}>
+          {/* <Text font={""} fontSize="0.4" position={[-2.15, 0.6, -6.5]}>
             Arief R. Syauqie's
           </Text>
+          <Text font={""} fontSize="0.4" position={[1.5, 0.7, -6.5]}>
+          _______________________
+          </Text> */}
           <Title name="title" position={[0, 0, -6.5]} />
           <TitleCopies layers={[11]} />
           <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
