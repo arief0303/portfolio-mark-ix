@@ -245,6 +245,9 @@ function Content() {
             position={[0, 0, 0]}
             args={[0.1, 100, renderTarget]}
           />
+          <Text font={""} fontSize="0.4" position={[-2.15, 0.6, -6]}>
+            Arief R. Syauqie's
+          </Text>
           <Title name="title" position={[0, 0, -6]} />
           <TitleCopies layers={[11]} />
           <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
@@ -254,96 +257,125 @@ function Content() {
       </Section>
       <Section factor={1} offset={1}>
         <group position={position}>
-            <Diamonds1 rotation={[1,0,-180]} layers={[0, 11]} position={[0, -5, 7]} />
-            <Text
-              depthTest={false}
-              material-toneMapped={false}
-              material-color="#FFFFFF"
-              {...TEXT_PROPS}
-            >
-              FRONT-END
-            </Text>
-            <group position={[0, -1, 0]}>
-              <Text
-                depthTest={false}
-                material-toneMapped={false}
-                material-color="#FFFFFF"
-                {...TEXT_PROPS}
-              >
-                DEVELOPER
-              </Text>
-            </group>
-            <Html
-              center
-              layers={[0]}
-              position={[0, -5, 0]}
-              style={{ width: "70vw" }}
-            >
-              <p className="text">Skills: Lorem, Ipsum, Dolor</p>
-              <p className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                euismod odio eu dui tempus consequat. Interdum et malesuada
-                fames ac ante ipsum primis in faucibus. Ut venenatis nibh quis
-                purus dignissim, ornare iaculis ipsum imperdiet. Duis lobortis
-                fringilla est, eget ultrices sem faucibus a.
-              </p>
-            </Html>
+          <Diamonds1
+            rotation={[1, 0, -180]}
+            layers={[0, 11]}
+            position={[0, -5, 7]}
+          />
+          <Text
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            FRONT-END
+          </Text>
+          <Text
+            position={[0, -1, 0]}
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            DEVELOPER
+          </Text>
+          <Html
+            center
+            layers={[0]}
+            position={[0, -5, 0]}
+            style={{ width: "70vw" }}
+          >
+            <p className="text">Skills: HTML, Javascript, CSS, WebGL</p>
+            <p className="text"></p>
+            <p className="text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              euismod odio eu dui tempus consequat. Interdum et malesuada fames
+              ac ante ipsum primis in faucibus. Ut venenatis nibh quis purus
+              dignissim, ornare iaculis ipsum imperdiet. Duis lobortis fringilla
+              est, eget ultrices sem faucibus a.
+            </p>
+          </Html>
         </group>
       </Section>
       <Section factor={1} offset={2}>
         <group position={position}>
-          <Diamonds2 rotation={[1,0,-90]} layers={[0, 11]} position={[0, -5, 7]} />
+          <Diamonds2
+            rotation={[1, 0, -90]}
+            layers={[0, 11]}
+            position={[0, -6, 7]}
+          />
           <Text
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            3D DEVELOPER
+            Computer Vision
+          </Text>
+          <Text
+            position={[0, -1, 0]}
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            &
+          </Text>
+          <Text
+            position={[0, -2, 0]}
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            AI Developer
           </Text>
           <Html
-              center
-              layers={[0]}
-              position={[0, -5, 0]}
-              style={{ width: "70vw" }}
-            >
-              <p className="text">Skills: Lorem, Ipsum, Dolor</p>
-              <p className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                euismod odio eu dui tempus consequat. Interdum et malesuada
-                fames ac ante ipsum primis in faucibus. Ut venenatis nibh quis
-                purus dignissim, ornare iaculis ipsum imperdiet. Duis lobortis
-                fringilla est, eget ultrices sem faucibus a.
-              </p>
-            </Html>
+            center
+            layers={[0]}
+            position={[0, -5, 0]}
+            style={{ width: "70vw" }}
+          >
+            <p className="text">Skills: Python, Tensorflow, OpenCV</p>
+            <p className="text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              euismod odio eu dui tempus consequat. Interdum et malesuada fames
+              ac ante ipsum primis in faucibus. Ut venenatis nibh quis purus
+              dignissim, ornare iaculis ipsum imperdiet. Duis lobortis fringilla
+              est, eget ultrices sem faucibus a.
+            </p>
+          </Html>
         </group>
       </Section>
       <Section factor={1} offset={3}>
         <group position={position}>
-        <Diamonds3 rotation={[1,0,-70]} layers={[0, 11]} position={[0, -6, 7]} />
+          <Diamonds3
+            rotation={[1, 0, -70]}
+            layers={[0, 11]}
+            position={[0, -6, 7]}
+          />
           <Text
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            AI DEVELOPER
+            Additional Info
           </Text>
           <Html
-              center
-              layers={[0]}
-              position={[0, -5, 0]}
-              style={{ width: "70vw" }}
-            >
-              <p className="text">Skills: Lorem, Ipsum, Dolor</p>
-              <p className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                euismod odio eu dui tempus consequat. Interdum et malesuada
-                fames ac ante ipsum primis in faucibus. Ut venenatis nibh quis
-                purus dignissim, ornare iaculis ipsum imperdiet. Duis lobortis
-                fringilla est, eget ultrices sem faucibus a.
-              </p>
-            </Html>
+            center
+            layers={[0]}
+            position={[0, -5, 0]}
+            style={{ width: "70vw" }}
+          >
+            <p className="text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              euismod odio eu dui tempus consequat. Interdum et malesuada fames
+              ac ante ipsum primis in faucibus. Ut venenatis nibh quis purus
+              dignissim, ornare iaculis ipsum imperdiet. Duis lobortis fringilla
+              est, eget ultrices sem faucibus a.
+            </p>
+          </Html>
         </group>
       </Section>
       {/* <Block factor={1.2} offset={5.7}> */}
