@@ -245,10 +245,10 @@ function Content() {
             position={[0, 0, 0]}
             args={[0.1, 100, renderTarget]}
           />
-          <Text font={""} fontSize="0.4" position={[-2.15, 0.6, -6]}>
+          <Text font={""} fontSize="0.4" position={[-2.15, 0.6, -6.5]}>
             Arief R. Syauqie's
           </Text>
-          <Title name="title" position={[0, 0, -6]} />
+          <Title name="title" position={[0, 0, -6.5]} />
           <TitleCopies layers={[11]} />
           <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
           <ambientLight intensity={0.4} />
@@ -333,7 +333,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -5, 0]}
+            position={[0, -6, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">Skills: Python, Tensorflow, OpenCV</p>
@@ -360,7 +360,16 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            Additional Info
+            Additional
+          </Text>
+          <Text
+            position={[0, -1, 0]}
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            Info
           </Text>
           <Html
             center
