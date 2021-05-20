@@ -310,7 +310,7 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            Computer Vision
+            Computer
           </Text>
           <Text
             position={[0, -1, 0]}
@@ -319,10 +319,19 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            &
+            Vision
           </Text>
           <Text
             position={[0, -2, 0]}
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            &
+          </Text>
+          <Text
+            position={[0, -3, 0]}
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
@@ -333,7 +342,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -6, 0]}
+            position={[0, -7, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">Skills: Python, Tensorflow, OpenCV</p>
@@ -352,7 +361,7 @@ function Content() {
           <Diamonds3
             rotation={[1, 0, -70]}
             layers={[0, 11]}
-            position={[0, -6, 7]}
+            position={[0, -6.7, 7]}
           />
           <Text
             depthTest={false}
