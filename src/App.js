@@ -365,15 +365,13 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -5, 0]}
+            position={[0, -4, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              euismod odio eu dui tempus consequat. Interdum et malesuada fames
-              ac ante ipsum primis in faucibus. Ut venenatis nibh quis purus
-              dignissim, ornare iaculis ipsum imperdiet. Duis lobortis fringilla
-              est, eget ultrices sem faucibus a.
+              Past Working Experiences: <br /><br />
+                <li> Visual Jockey 2017 - 2018</li>
+                <li> Courier 2020 - present</li>
             </p>
           </Html>
         </group>
