@@ -291,11 +291,11 @@ function Content() {
             <p className="text">Skills: HTML, Javascript, CSS, WebGL</p>
             <p className="text"></p>
             <p className="text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              euismod odio eu dui tempus consequat. Interdum et malesuada fames
-              ac ante ipsum primis in faucibus. Ut venenatis nibh quis purus
-              dignissim, ornare iaculis ipsum imperdiet. Duis lobortis fringilla
-              est, eget ultrices sem faucibus a.
+              I am a creative developer who is avid in front-end development and
+              I can work with various frameworks. To this point, I have
+              experience working with React and Vue. From my previous semester
+              in ICT & Media Design, I also have a background in UX(User
+              Experience) design and 3D modelling & rendering with Maya and Blender.
             </p>
           </Html>
         </group>
@@ -350,12 +350,17 @@ function Content() {
           >
             <p className="text">Skills: Python, Tensorflow, OpenCV</p>
             <p className="text">
+              During my specialization in Artificial Intelligence, I specialize
+              in Computer Vision technology and Deep Learning tools to develop
+              AI models that can acquire information from visual datasets.
+            </p>
+            {/* <p className="text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
               euismod odio eu dui tempus consequat. Interdum et malesuada fames
               ac ante ipsum primis in faucibus. Ut venenatis nibh quis purus
               dignissim, ornare iaculis ipsum imperdiet. Duis lobortis fringilla
               est, eget ultrices sem faucibus a.
-            </p>
+            </p> */}
           </Html>
         </group>
       </Section>
@@ -372,7 +377,7 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            Additional
+            curriculum
           </Text>
           <Text
             position={[0, -1, 0]}
@@ -381,7 +386,7 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            Information
+            vitae
           </Text>
           <Html
             center
@@ -390,10 +395,26 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">
-              Working Experiences: <br /><br />
-                <li> Freelance Visual Jockey<br />August 2017 - August 2018</li>
-                <li> Freelance Courier<br />December 2019 - present</li>
-                <li> Junior Front-end Developer at PT. Teknologi Kartu Indonesia<br />December 2020 - March 2021</li>
+              Working Experiences: <br />
+              <br />
+              <li>
+                {" "}
+                Freelance Visual Jockey
+                <br />
+                August 2017 - August 2018
+              </li>
+              <li>
+                {" "}
+                Freelance Courier
+                <br />
+                December 2019 - present
+              </li>
+              <li>
+                {" "}
+                Junior Front-end Developer at PT. Teknologi Kartu Indonesia
+                <br />
+                December 2020 - March 2021
+              </li>
             </p>
           </Html>
         </group>
