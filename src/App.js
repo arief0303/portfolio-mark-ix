@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState, useRef, Suspense } from "react";
-import { Canvas, useFrame, useResource } from "react-three-fiber";
+import { Canvas, useFrame, useResource, useLoader } from "react-three-fiber";
 import { a, useTransition } from "@react-spring/web";
 import {
   Text,
@@ -13,6 +13,7 @@ import {
 import * as THREE from "three";
 import "./App.scss";
 
+import img from "./0005.JPG";
 import { ThinFilmFresnelMap } from "./components/ThinFilmFresnelMap";
 import useRenderTarget from "./components/use-render-target";
 import { mirrorsData } from "./components/data";
@@ -196,6 +197,27 @@ function Diamonds2({ layers, ...props }) {
 }
 
 function Diamonds3({ layers, ...props }) {
+  const [matcapTexture] = useMatcapTexture("7877EE_D87FC5_75D9C7_1C78C0");
+  const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
+
+  return (
+    <group name="diamonds" {...props}>
+      {diamondsData.mirrors.map((mirror, index) => (
+        <Diamond
+          key={`diamond-${index}`}
+          name={`diamond-${index}`}
+          {...mirror}
+          geometry={nodes.Cylinder.geometry}
+          matcap={matcapTexture}
+          scale={[0.5, 0.5, 0.5]}
+          layers={layers}
+        />
+      ))}
+    </group>
+  );
+}
+
+function Diamonds4({ layers, ...props }) {
   const [matcapTexture] = useMatcapTexture("8955D0_744CC4_EA4AEF_954DA4");
   const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
 
@@ -213,6 +235,16 @@ function Diamonds3({ layers, ...props }) {
         />
       ))}
     </group>
+  );
+}
+
+function Image() {
+  const texture = useLoader(THREE.TextureLoader, img);
+  return (
+    <mesh>
+      <planeBufferGeometry attach="geometry" args={[6.5 * 2, 4 * 2]} />
+      <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
+    </mesh>
   );
 }
 
@@ -295,7 +327,8 @@ function Content() {
               I can work with various frameworks. To this point, I have
               experience working with React and Vue. From my previous semester
               in ICT & Media Design, I also have a background in UX(User
-              Experience) design and 3D modelling & rendering with Maya and Blender.
+              Experience) design and 3D modelling & rendering with Maya and
+              Blender.
             </p>
           </Html>
         </group>
@@ -415,6 +448,38 @@ function Content() {
                 <br />
                 December 2020 - March 2021
               </li>
+            </p>
+          </Html>
+        </group>
+      </Section>
+      <Section factor={1} offset={4}>
+        <group position={position}>
+          <Diamonds4
+            rotation={[1, 0, -40]}
+            layers={[0, 11]}
+            position={[0, -6.7, 7]}
+          />
+          <Text
+            position={[0, -4.5, 0]}
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            About Me
+          </Text>
+          <Image />
+          <Html
+            center
+            layers={[0]}
+            position={[0, -7.5, 0]}
+            style={{ width: "70vw" }}
+          >
+            <p className="text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque non ipsum odio. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Maecenas vitae metus quis nisi
+              maximus consequat at eu felis.
             </p>
           </Html>
         </group>
