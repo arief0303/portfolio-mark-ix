@@ -317,7 +317,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -6.5, 0]}
+            position={[0, -7, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">Skills: HTML, Javascript, CSS, WebGL</p>
@@ -424,7 +424,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -5.2, 0]}
+            position={[0, -6.3, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
@@ -460,7 +460,7 @@ function Content() {
             position={[0, -6.7, 7]}
           />
           <Text
-            position={[0, -4.5, 0]}
+            position={[0, -5.2, 0]}
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
@@ -472,7 +472,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -7.5, 0]}
+            position={[0, -8.3, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
