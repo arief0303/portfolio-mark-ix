@@ -373,7 +373,7 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            AI Developer
+            AI Engineer
           </Text>
           <Html
             center
