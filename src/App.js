@@ -373,7 +373,7 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            AI Engineer
+            AI Developer
           </Text>
           <Html
             center
@@ -472,7 +472,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -8.3, 0]}
+            position={[0, -8.6, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
