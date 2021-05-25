@@ -295,7 +295,7 @@ function Content() {
           <Diamonds1
             rotation={[1, 0, -180]}
             layers={[0, 11]}
-            position={[0, -5, 7]}
+            position={[0, -5.2, 7]}
           />
           <Text
             depthTest={false}
@@ -474,7 +474,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -8.3, 0]}
+            position={[0, -8.6, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
