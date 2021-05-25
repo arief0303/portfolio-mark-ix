@@ -321,7 +321,6 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">Skills: HTML, Javascript, CSS, WebGL</p>
-            <p className="text"></p>
             <p className="text">
               I am a creative developer who is avid in front-end development and
               I can work with various frameworks. To this point, I have
@@ -385,7 +384,7 @@ function Content() {
             <p className="text">
               During my specialization in Artificial Intelligence, I specialize
               in Computer Vision technology and Deep Learning tools to develop
-              AI models that can acquire information from visual datasets.
+              AI models that can gain high-level of understanding based from visual datasets.
             </p>
             {/* <p className="text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -428,8 +427,11 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">
+              Education: Ongoing study in Bachelor degree of Science in ICT & AI with a background profile in ICT & Media Design.
+            </p>
+            <br />
+            <p className="text">
               Working Experiences: <br />
-              <br />
               <li>
                 {" "}
                 Freelance Visual Jockey
@@ -476,10 +478,7 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque non ipsum odio. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Maecenas vitae metus quis nisi
-              maximus consequat at eu felis.
+            My name is Arief, and I'm a creative developer. I was born in Indonesia and I grew up loving arts and technology. I have a keen eye for visual art and a love of coding.
             </p>
           </Html>
         </group>
