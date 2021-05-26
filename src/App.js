@@ -320,14 +320,15 @@ function Content() {
             position={[0, -7, 0]}
             style={{ width: "70vw" }}
           >
-            <p className="text">Skills: HTML, Javascript, CSS, WebGL</p>
             <p className="text">
-              I am a creative developer who is avid in front-end development and
-              I can work with various frameworks. To this point, I have
-              experience working with React and Vue. From my previous semester
-              in ICT & Media Design, I also have a background in UX(User
-              Experience) design and 3D modelling & rendering with Maya and
-              Blender.
+              Skills: HTML, Javascript, React.js, Vue.js, CSS, SASS, WebGL,
+              Three.js
+            </p>
+            <p className="text">
+              I am a front-end developer who is avid in computer graphics. From
+              my previous semester in ICT & Media Design, I also have a
+              background in UX design and 3D modelling & rendering with various
+              tools such as Maya, Blender, Cinema4D.
             </p>
           </Html>
         </group>
@@ -384,7 +385,7 @@ function Content() {
             <p className="text">
               During my specialization in Artificial Intelligence, I specialize
               in Computer Vision technology and Deep Learning tools to develop
-              AI models that can gain high-level of understanding based from visual datasets.
+              AI models to gain information from image-based datasets.
             </p>
             {/* <p className="text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -427,7 +428,7 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">
-              Education: Ongoing study in Bachelor degree of Science in ICT & AI with a background profile in ICT & Media Design.
+              Education: 4th semester of ICT Bachelor's degree.
             </p>
             <br />
             <p className="text">
@@ -478,7 +479,9 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">
-            My name is Arief, and I'm a creative developer. I was born in Indonesia and I grew up loving arts and technology. I have a keen eye for visual art and a love of coding.
+              My name is Arief, and I'm a creative developer. I was born in
+              Indonesia and I grew up loving arts and technology. I have a keen
+              eye for visual art and a love of coding.
             </p>
           </Html>
         </group>
