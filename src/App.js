@@ -424,7 +424,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -6.3, 0]}
+            position={[0, -7, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
@@ -487,6 +487,11 @@ function Content() {
               My name is Arief, and I'm a creative developer. I was born in
               Indonesia and I grew up loving arts and technology. I have a keen
               eye for visual art and a love of coding.
+              <br />
+              <br />
+              <a href="https://www.linkedin.com/in/arief-r-b2b51b108/">
+                LinkedIn
+              </a>
             </p>
           </Html>
         </group>
