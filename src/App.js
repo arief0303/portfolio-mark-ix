@@ -428,11 +428,16 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">
-              Education: 4th semester of ICT Bachelor's degree.
+              Education:
+              <br />
+              <br />
+              <li>Graduated ICT Propadeutic Phase.</li>
+              <li>4th semester of ICT Bachelor's degree.</li>
             </p>
             <br />
             <p className="text">
               Working Experiences: <br />
+              <br />
               <li>
                 {" "}
                 Freelance Visual Jockey
