@@ -322,7 +322,7 @@ function Content() {
           >
             <p className="text">
               Skills: HTML, Javascript, React.js, Vue.js, CSS, SASS, WebGL,
-              Three.js
+              Three.js, Node.js, Webpack, GIT
             </p>
             <p className="text">
               I am a front-end developer who is avid in computer graphics. From
