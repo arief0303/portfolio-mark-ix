@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header>
       <div className='header-inner'>
-        <div className='logo'>Arief R. Syauqie</div>
+        <div className='logo'><img src="../logo192.png" alt="logo" width="20" height="20" /> Arief R. Syauqie</div>
         {/* <nav>
           <ul>
             <li>
