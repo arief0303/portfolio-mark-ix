@@ -424,7 +424,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -7, 0]}
+            position={[0, -8, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
@@ -456,16 +456,22 @@ function Content() {
                 <br />
                 December 2020 - March 2021
               </li>
+              <li>
+                {" "}
+                3D Front-end Developer at Quadriceps B.V.
+                <br />
+                June 2021 - present
+              </li>
             </p>
           </Html>
         </group>
       </Section>
       <Section factor={1} offset={4}>
-        <group position={position}>
+        <group position={ [0, 2, -11]}>
           <Diamonds4
             rotation={[1, 0, -40]}
             layers={[0, 11]}
-            position={[0, -6.7, 7]}
+            position={[0, -6, 7]}
           />
           <Text
             position={[0, -5.2, 0]}
