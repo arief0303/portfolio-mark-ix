@@ -476,6 +476,7 @@ function Content() {
             About Me
           </Text>
           <Image />
+          <Video1 />
           <Html
             center
             layers={[0]}
