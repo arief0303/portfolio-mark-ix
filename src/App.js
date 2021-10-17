@@ -13,6 +13,7 @@ import {
 import * as THREE from "three";
 import "./App.scss";
 
+import img1 from "./BR_ARCHIVE-LIBRARY.jpg";
 import img from "./0005.JPG";
 import { ThinFilmFresnelMap } from "./components/ThinFilmFresnelMap";
 import useRenderTarget from "./components/use-render-target";
@@ -238,6 +239,16 @@ function Diamonds4({ layers, ...props }) {
   );
 }
 
+function Image1() {
+  const texture = useLoader(THREE.TextureLoader, img1);
+  return (
+    <mesh>
+      <planeBufferGeometry attach="geometry" args={[6.5 * 2, 4 * 2]} />
+      <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
+    </mesh>
+  );
+}
+
 function Image() {
   const texture = useLoader(THREE.TextureLoader, img);
   return (
@@ -291,112 +302,29 @@ function Content() {
         </group>
       </Section>
       <Section factor={1} offset={1}>
-        <group position={position}>
-          <Diamonds1
-            rotation={[1, 0, -180]}
-            layers={[0, 11]}
-            position={[0, -5.2, 7]}
-          />
+        <group position={ [0, 2, -11]}>
           <Text
+            position={[0, -5.2, 0]}
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            FRONT-END
+            Blade Runner Render
           </Text>
-          <Text
-            position={[0, -1, 0]}
-            depthTest={false}
-            material-toneMapped={false}
-            material-color="#FFFFFF"
-            {...TEXT_PROPS}
-          >
-            DEVELOPER
-          </Text>
+          <Image1 />
           <Html
             center
             layers={[0]}
-            position={[0, -7, 0]}
+            position={[0, -8.6, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
-              Skills: HTML, Javascript, React.js, Vue.js, CSS, SASS, WebGL,
-              Three.js, Node.js, Webpack, GIT
-            </p>
-            <p className="text">
-              I am a front-end developer who is avid in computer graphics. From
-              my previous semester in ICT & Media Design, I also have a
-              background in UX design and 3D modelling & rendering with various
-              tools such as Maya, Blender, Cinema4D.
+              First trial with Maya to recreate scenes from Blade Runner.
             </p>
           </Html>
         </group>
-      </Section>
-      <Section factor={1} offset={2}>
-        <group position={position}>
-          <Diamonds2
-            rotation={[1, 0, -90]}
-            layers={[0, 11]}
-            position={[0, -6, 7]}
-          />
-          <Text
-            depthTest={false}
-            material-toneMapped={false}
-            material-color="#FFFFFF"
-            {...TEXT_PROPS}
-          >
-            Computer
-          </Text>
-          <Text
-            position={[0, -1, 0]}
-            depthTest={false}
-            material-toneMapped={false}
-            material-color="#FFFFFF"
-            {...TEXT_PROPS}
-          >
-            Vision
-          </Text>
-          <Text
-            position={[0, -2, 0]}
-            depthTest={false}
-            material-toneMapped={false}
-            material-color="#FFFFFF"
-            {...TEXT_PROPS}
-          >
-            &
-          </Text>
-          <Text
-            position={[0, -3, 0]}
-            depthTest={false}
-            material-toneMapped={false}
-            material-color="#FFFFFF"
-            {...TEXT_PROPS}
-          >
-            AI Developer
-          </Text>
-          <Html
-            center
-            layers={[0]}
-            position={[0, -8, 0]}
-            style={{ width: "70vw" }}
-          >
-            <p className="text">Skills: Python, Tensorflow, OpenCV</p>
-            <p className="text">
-              During my specialization in Artificial Intelligence, I specialize
-              in Computer Vision technology and Deep Learning tools to develop
-              AI models to gain information from image-based datasets.
-            </p>
-            {/* <p className="text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              euismod odio eu dui tempus consequat. Interdum et malesuada fames
-              ac ante ipsum primis in faucibus. Ut venenatis nibh quis purus
-              dignissim, ornare iaculis ipsum imperdiet. Duis lobortis fringilla
-              est, eget ultrices sem faucibus a.
-            </p> */}
-          </Html>
-        </group>
-      </Section>
+      </Section>   
       <Section factor={1} offset={3}>
         <group position={position}>
           <Diamonds3
