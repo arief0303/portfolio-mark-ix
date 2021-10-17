@@ -14,6 +14,7 @@ import * as THREE from "three";
 import "./App.scss";
 
 import img1 from "./BR_ARCHIVE-LIBRARY.jpg";
+import img2 from "./HighresScreenshot00001.png";
 import img from "./0005.JPG";
 import { ThinFilmFresnelMap } from "./components/ThinFilmFresnelMap";
 import useRenderTarget from "./components/use-render-target";
@@ -249,6 +250,16 @@ function Image1() {
   );
 }
 
+function Image2() {
+  const texture = useLoader(THREE.TextureLoader, img2);
+  return (
+    <mesh>
+      <planeBufferGeometry attach="geometry" args={[6.5 * 2, 4 * 2]} />
+      <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
+    </mesh>
+  );
+}
+
 function Image() {
   const texture = useLoader(THREE.TextureLoader, img);
   return (
@@ -324,7 +335,31 @@ function Content() {
             </p>
           </Html>
         </group>
-      </Section>   
+      </Section>
+      <Section factor={1} offset={2}>
+        <group position={ [0, 2, -11]}>
+          <Text
+            position={[0, -5.2, 0]}
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            Wetland Environment
+          </Text>
+          <Image2 />
+          <Html
+            center
+            layers={[0]}
+            position={[0, -8.6, 0]}
+            style={{ width: "70vw" }}
+          >
+            <p className="text">
+              Environment recreation of a Wetland made with Unreal Engine using Quixel Megascans assets.
+            </p>
+          </Html>
+        </group>
+      </Section>    
       <Section factor={1} offset={3}>
         <group position={position}>
           <Diamonds3
