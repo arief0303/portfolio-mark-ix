@@ -9,6 +9,7 @@ import {
   useGLTFLoader,
   useMatcapTexture,
   useProgress,
+  useAspect
 } from "@react-three/drei";
 import * as THREE from "three";
 import "./App.scss";
@@ -240,6 +241,27 @@ function Diamonds4({ layers, ...props }) {
   );
 }
 
+function Video1() {
+  const size = useAspect(1800, 1000);
+  const [video] = useState(() => {
+    const vid = document.createElement("video");
+    vid.src = "/10.mp4";
+    vid.crossOrigin = "Anonymous";
+    vid.loop = true;
+    return vid;
+  });
+  // Keep in mind videos can only play once the user has interacted with the site ...
+  useEffect(() => void video.play(), [video]);
+  return (
+    <mesh>
+      <planeBufferGeometry args={[6.5 * 2, 4 * 2]} />
+      <meshBasicMaterial>
+        <videoTexture attach="map" args={[video]} />
+      </meshBasicMaterial>
+    </mesh>
+  );
+}
+
 function Image1() {
   const texture = useLoader(THREE.TextureLoader, img1);
   return (
@@ -315,19 +337,28 @@ function Content() {
       <Section factor={1} offset={1}>
         <group position={ [0, 2, -11]}>
           <Text
-            position={[0, -5.2, 0]}
+            position={[0, -11, 0]}
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            Blade Runner Render
+            Blade Runner
+          </Text>
+          <Text
+            position={[0, -12.25, 0]}
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            Render
           </Text>
           <Image1 />
           <Html
             center
             layers={[0]}
-            position={[0, -8.6, 0]}
+            position={[0, -14.5, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
@@ -336,7 +367,7 @@ function Content() {
           </Html>
         </group>
       </Section>
-      <Section factor={1} offset={2}>
+      <Section factor={1} offset={2.5}>
         <group position={ [0, 2, -11]}>
           <Text
             position={[0, -5.2, 0]}
