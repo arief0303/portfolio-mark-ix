@@ -8,8 +8,7 @@ import {
   Sky,
   useGLTFLoader,
   useMatcapTexture,
-  useProgress,
-  useAspect
+  useProgress
 } from "@react-three/drei";
 import * as THREE from "three";
 import "./App.scss";
@@ -157,47 +156,47 @@ function Diamond({ map, texture, matcap, layers, ...props }) {
   );
 }
 
-function Diamonds1({ layers, ...props }) {
-  const [matcapTexture] = useMatcapTexture("2E763A_78A0B7_B3D1CF_14F209");
-  const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
+// function Diamonds1({ layers, ...props }) {
+//   const [matcapTexture] = useMatcapTexture("2E763A_78A0B7_B3D1CF_14F209");
+//   const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
 
-  return (
-    <group name="diamonds" {...props}>
-      {diamondsData.mirrors.map((mirror, index) => (
-        <Diamond
-          key={`diamond-${index}`}
-          name={`diamond-${index}`}
-          {...mirror}
-          geometry={nodes.Cylinder.geometry}
-          matcap={matcapTexture}
-          scale={[0.5, 0.5, 0.5]}
-          layers={layers}
-        />
-      ))}
-    </group>
-  );
-}
+//   return (
+//     <group name="diamonds" {...props}>
+//       {diamondsData.mirrors.map((mirror, index) => (
+//         <Diamond
+//           key={`diamond-${index}`}
+//           name={`diamond-${index}`}
+//           {...mirror}
+//           geometry={nodes.Cylinder.geometry}
+//           matcap={matcapTexture}
+//           scale={[0.5, 0.5, 0.5]}
+//           layers={layers}
+//         />
+//       ))}
+//     </group>
+//   );
+// }
 
-function Diamonds2({ layers, ...props }) {
-  const [matcapTexture] = useMatcapTexture("D0CCCB_524D50_928891_727581");
-  const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
+// function Diamonds2({ layers, ...props }) {
+//   const [matcapTexture] = useMatcapTexture("D0CCCB_524D50_928891_727581");
+//   const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
 
-  return (
-    <group name="diamonds" {...props}>
-      {diamondsData.mirrors.map((mirror, index) => (
-        <Diamond
-          key={`diamond-${index}`}
-          name={`diamond-${index}`}
-          {...mirror}
-          geometry={nodes.Cylinder.geometry}
-          matcap={matcapTexture}
-          scale={[0.5, 0.5, 0.5]}
-          layers={layers}
-        />
-      ))}
-    </group>
-  );
-}
+//   return (
+//     <group name="diamonds" {...props}>
+//       {diamondsData.mirrors.map((mirror, index) => (
+//         <Diamond
+//           key={`diamond-${index}`}
+//           name={`diamond-${index}`}
+//           {...mirror}
+//           geometry={nodes.Cylinder.geometry}
+//           matcap={matcapTexture}
+//           scale={[0.5, 0.5, 0.5]}
+//           layers={layers}
+//         />
+//       ))}
+//     </group>
+//   );
+// }
 
 function Diamonds3({ layers, ...props }) {
   const [matcapTexture] = useMatcapTexture("7877EE_D87FC5_75D9C7_1C78C0");
@@ -242,7 +241,7 @@ function Diamonds4({ layers, ...props }) {
 }
 
 function Video1() {
-  const size = useAspect(1800, 1000);
+  // const size = useAspect(1800, 1000);
   const [video] = useState(() => {
     const vid = document.createElement("video");
     vid.src = "/10.mp4";
