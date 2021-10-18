@@ -8,12 +8,14 @@ import {
   Sky,
   useGLTFLoader,
   useMatcapTexture,
-  useProgress
+  useProgress,
 } from "@react-three/drei";
 import * as THREE from "three";
 import "./App.scss";
 
-import img1 from "./BR_ARCHIVE-LIBRARY.jpg";
+import imgBR1 from "./BR_ARCHIVE-LIBRARY.jpg";
+import imgBR2 from "./BR_CAUSTICS.jpg";
+import imgBR3 from "./BR_DESSERT.jpg";
 import img2 from "./HighresScreenshot00001.png";
 import img from "./0005.JPG";
 import { ThinFilmFresnelMap } from "./components/ThinFilmFresnelMap";
@@ -198,7 +200,7 @@ function Diamond({ map, texture, matcap, layers, ...props }) {
 //   );
 // }
 
-function Diamonds3({ layers, ...props }) {
+/* function Diamonds3({ layers, ...props }) {
   const [matcapTexture] = useMatcapTexture("7877EE_D87FC5_75D9C7_1C78C0");
   const { nodes } = useGLTFLoader(process.env.PUBLIC_URL + "/diamond.glb");
 
@@ -217,7 +219,7 @@ function Diamonds3({ layers, ...props }) {
       ))}
     </group>
   );
-}
+} */
 
 function Diamonds4({ layers, ...props }) {
   const [matcapTexture] = useMatcapTexture("8955D0_744CC4_EA4AEF_954DA4");
@@ -261,11 +263,31 @@ function Video1() {
   );
 }
 
-function Image1() {
-  const texture = useLoader(THREE.TextureLoader, img1);
+function ImageBR1() {
+  const texture = useLoader(THREE.TextureLoader, imgBR1);
   return (
     <mesh>
-      <planeBufferGeometry attach="geometry" args={[6.5 * 2, 4 * 2]} />
+      <planeBufferGeometry attach="geometry" args={[6.5 * 2.5, 4 * 2.5]} />
+      <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
+    </mesh>
+  );
+}
+
+function ImageBR2() {
+  const texture = useLoader(THREE.TextureLoader, imgBR2);
+  return (
+    <mesh>
+      <planeBufferGeometry attach="geometry" args={[6.5 * 1.25, 4 * 1.25]} />
+      <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
+    </mesh>
+  );
+}
+
+function ImageBR3() {
+  const texture = useLoader(THREE.TextureLoader, imgBR3);
+  return (
+    <mesh>
+      <planeBufferGeometry attach="geometry" args={[6.5 * 1.25, 4 * 1.25]} />
       <meshBasicMaterial attach="material" map={texture} toneMapped={false} />
     </mesh>
   );
@@ -295,7 +317,6 @@ function Content() {
   // const group = useSlerp();
   const group = useRef();
   const [cubeCamera, renderTarget] = useRenderTarget();
-  const position = [0, 5, -11];
 
   useFrame(({ gl, scene }) => {
     cubeCamera.current.update(gl, scene);
@@ -333,10 +354,10 @@ function Content() {
           {/* <OrbitControls /> */}
         </group>
       </Section>
-      <Section factor={1} offset={1}>
-        <group position={ [0, 2, -11]}>
+      <Section factor={1} offset={1.1}>
+        <group position={[0, 2, -11]}>
           <Text
-            position={[0, -11, 0]}
+            position={[0, -12, 0]}
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
@@ -345,7 +366,7 @@ function Content() {
             Blade Runner
           </Text>
           <Text
-            position={[0, -12.25, 0]}
+            position={[0, -13.25, 0]}
             depthTest={false}
             material-toneMapped={false}
             material-color="#FFFFFF"
@@ -353,11 +374,17 @@ function Content() {
           >
             Render
           </Text>
-          <Image1 />
+          <ImageBR1 />
+          <group position={[-4.75, -8, 0]}>
+            <ImageBR2 />
+          </group>
+          <group position={[4, -8, 0]}>
+            <ImageBR3 />
+          </group>
           <Html
             center
             layers={[0]}
-            position={[0, -14.5, 0]}
+            position={[0, -15, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
@@ -367,7 +394,7 @@ function Content() {
         </group>
       </Section>
       <Section factor={1} offset={2.5}>
-        <group position={ [0, 2, -11]}>
+        <group position={[0, 2, -11]}>
           <Text
             position={[0, -5.2, 0]}
             depthTest={false}
@@ -385,82 +412,39 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">
-              Environment recreation of a Wetland made with Unreal Engine using Quixel Megascans assets.
-            </p>
-          </Html>
-        </group>
-      </Section>    
-      <Section factor={1} offset={3}>
-        <group position={position}>
-          <Diamonds3
-            rotation={[1, 0, -70]}
-            layers={[0, 11]}
-            position={[0, -6.7, 7]}
-          />
-          <Text
-            depthTest={false}
-            material-toneMapped={false}
-            material-color="#FFFFFF"
-            {...TEXT_PROPS}
-          >
-            curriculum
-          </Text>
-          <Text
-            position={[0, -1, 0]}
-            depthTest={false}
-            material-toneMapped={false}
-            material-color="#FFFFFF"
-            {...TEXT_PROPS}
-          >
-            vitae
-          </Text>
-          <Html
-            center
-            layers={[0]}
-            position={[0, -8, 0]}
-            style={{ width: "70vw" }}
-          >
-            <p className="text">
-              Education:
-              <br />
-              <br />
-              <li>Graduated ICT Propadeutic Phase.</li>
-              <li>4th semester of ICT Bachelor's degree.</li>
-            </p>
-            <br />
-            <p className="text">
-              Working Experiences: <br />
-              <br />
-              <li>
-                {" "}
-                Freelance Visual Jockey
-                <br />
-                August 2017 - August 2018
-              </li>
-              <li>
-                {" "}
-                Freelance Courier
-                <br />
-                December 2019 - present
-              </li>
-              <li>
-                {" "}
-                Junior Front-end Developer at PT. Teknologi Kartu Indonesia
-                <br />
-                December 2020 - March 2021
-              </li>
-              <li>
-                {" "}
-                3D Front-end Developer at Quadriceps B.V.
-                <br />
-                June 2021 - present
-              </li>
+              Environment recreation of a Wetland made with Unreal Engine using
+              Quixel Megascans assets.
             </p>
           </Html>
         </group>
       </Section>
-      <Section factor={1} offset={4}>
-        <group position={ [0, 2, -11]}>
+      <Section factor={1} offset={3.5}>
+        <group position={[0, 2, -11]}>
+          <Text
+            position={[0, -5.2, 0]}
+            depthTest={false}
+            material-toneMapped={false}
+            material-color="#FFFFFF"
+            {...TEXT_PROPS}
+          >
+            SDF Sculpture
+          </Text>
+          <Image />
+          <Video1 />
+          <Html
+            center
+            layers={[0]}
+            position={[0, -8.6, 0]}
+            style={{ width: "70vw" }}
+          >
+            <p className="text">
+              Lorem ipsum dolor sit amet.
+            </p>
+          </Html>
+        </group>
+      </Section>
+      <Section factor={1} offset={4.5}>
+        <group position={[0, 2, -11]}>
           <Diamonds4
             rotation={[1, 0, -40]}
             layers={[0, 11]}
@@ -476,7 +460,6 @@ function Content() {
             About Me
           </Text>
           <Image />
-          <Video1 />
           <Html
             center
             layers={[0]}
