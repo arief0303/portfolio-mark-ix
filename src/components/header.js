@@ -5,19 +5,19 @@ export default function Header() {
     <header>
       <div className='header-inner'>
         <div className='logo'><img src="../logo192.png" alt="logo" width="20" height="20" /> Arief R. Syauqie</div>
-        {/* <nav>
+        <nav>
           <ul>
-            <li>
-              <a href='/'>work</a>
+            {/* <li>
+              <a href='/'>Home</a>
             </li>
             <li>
-              <a href='/'>projects</a>
-            </li>
-            <li>
+              <a href='/'>Art Portfolio</a>
+            </li> */}
+            {/* <li>
               <a href='/'>discover</a>
-            </li>
+            </li> */}
           </ul>
-        </nav> */}
+        </nav>
       </div>
     </header>
   );
