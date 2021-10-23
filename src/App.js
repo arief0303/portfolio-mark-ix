@@ -447,7 +447,7 @@ function Content() {
                 {" "}
                 Freelance Courier
                 <br />
-                December 2019 - present
+                December 2019 - August 2021
               </li>
               <li>
                 {" "}
