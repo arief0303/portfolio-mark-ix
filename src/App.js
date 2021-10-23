@@ -459,7 +459,7 @@ function Content() {
                 {" "}
                 3D Front-end Developer at Quadriceps B.V.
                 <br />
-                June 2021 - present
+                June 2021 - August 2021
               </li>
             </p>
           </Html>
