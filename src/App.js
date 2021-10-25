@@ -447,7 +447,7 @@ function Content() {
                 {" "}
                 Freelance Courier
                 <br />
-                December 2019 - present
+                December 2019 - August 2021
               </li>
               <li>
                 {" "}
@@ -459,7 +459,7 @@ function Content() {
                 {" "}
                 3D Front-end Developer at Quadriceps B.V.
                 <br />
-                June 2021 - present
+                June 2021 - August 2021
               </li>
             </p>
           </Html>
