@@ -303,7 +303,7 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            FRONT-END
+            3D FRONT-END
           </Text>
           <Text
             position={[0, -1, 0]}
@@ -325,9 +325,9 @@ function Content() {
               Three.js, Node.js, Webpack, GIT
             </p>
             <p className="text">
-              I am a creative coder who is avid in computer graphics. From
-              my previous studies in ICT & Media Design diploma. I also have a
-              background in UX design and 3D modelling & rendering with tools such as Maya, Blender, Cinema4D.
+              I am a Frontend developer who is avid in 3D computer graphics. From
+              my previous studies in ICT & Media Design. I also have a
+              background in 3D modelling & visualisation with tools such as Maya, Blender, Cinema4D.
             </p>
           </Html>
         </group>
