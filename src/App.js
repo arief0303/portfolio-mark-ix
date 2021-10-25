@@ -384,7 +384,7 @@ function Content() {
             <p className="text">
               During my specialization in Artificial Intelligence, I specialize
               in Computer Vision technology and Deep Learning tools to develop
-              AI models to gain information from image-based datasets.
+              AI models to gain information from digital images.
             </p>
             {/* <p className="text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
