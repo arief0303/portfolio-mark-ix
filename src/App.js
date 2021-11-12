@@ -56,7 +56,7 @@ function Title({ layers, ...props }) {
         material-color="#FFFFFF"
         {...TEXT_PROPS}
       >
-        Portfolio
+        Art Portfolio
       </Text>
     </group>
   );
