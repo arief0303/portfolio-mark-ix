@@ -321,13 +321,14 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">
-              Skills: HTML, Javascript, React.js, CSS, SASS, WebGL,
-              Three.js, Node.js, Webpack, GIT
+              Skills: HTML, Javascript, CSS, SASS, WebGL, Three.js, React,
+              Vue.js, Nuxt.js
             </p>
             <p className="text">
-              I am a Frontend developer who is avid in 3D computer graphics. From
-              my previous studies in ICT & Media Design. I also have a
-              background in 3D modelling & visualisation with tools such as Maya, Blender, Cinema4D.
+              I am a Frontend developer who is avid in 3D computer graphics.
+              From my previous studies in ICT & Media Design. I also have a
+              background in 3D modelling & visualisation with tools such as
+              Maya, Blender,and Cinema4D.
             </p>
           </Html>
         </group>
@@ -423,50 +424,57 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -8, 0]}
+            position={[0, -10, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
               Education:
               <br />
               <br />
-              <li>Graduated ICT Propadeutic Phase.</li>
-              <li>4th semester of ICT Bachelor's degree.</li>
+              <p>- Graduated ICT Propadeutic Phase. -</p>
             </p>
             <br />
             <p className="text">
               Working Experiences: <br />
               <br />
-              <li>
+              <p>
                 {" "}
-                Freelance Visual Jockey
+                - Freelance Visual Jockey -
+                <br />
+                Self-employed
                 <br />
                 August 2017 - August 2018
-              </li>
-              <li>
+              </p>
+              <p>
                 {" "}
-                Freelance Courier
+                - Urban Food Courier -
+                <br />
+                Deliveroo
                 <br />
                 December 2019 - August 2021
-              </li>
-              <li>
+              </p>
+              <p>
                 {" "}
-                Junior Front-end Developer at PT. Teknologi Kartu Indonesia
+                - 3D Front-end Developer -
                 <br />
-                December 2020 - March 2021
-              </li>
-              <li>
-                {" "}
-                3D Front-end Developer at Quadriceps B.V.
+                Quadriceps B.V.
                 <br />
                 June 2021 - August 2021
-              </li>
+              </p>
+              <p>
+                {" "}
+                - Front-end Developer -
+                <br />
+                PT. Teknologi Kartu Indonesia
+                <br />
+                December 2020 - March 2021
+              </p>
             </p>
           </Html>
         </group>
       </Section>
       <Section factor={1} offset={4}>
-        <group position={ [0, 2, -11]}>
+        <group position={[0, 4, -9]}>
           <Diamonds4
             rotation={[1, 0, -40]}
             layers={[0, 11]}
@@ -485,7 +493,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -8.6, 0]}
+            position={[0, -8.3, 0]}
             style={{ width: "70vw" }}
           >
             <p className="text">
