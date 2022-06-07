@@ -435,13 +435,15 @@ function Content() {
             </p>
             <br />
             <p className="text">
-              Working Experiences: <br />
+              Working Experiences:
               <br />
               <p>
                 {" "}
                 - Freelance Visual Jockey -
                 <br />
                 Self-employed
+                <br />
+                Bandung, Indonesia
                 <br />
                 August 2017 - August 2018
               </p>
@@ -451,6 +453,8 @@ function Content() {
                 <br />
                 Deliveroo
                 <br />
+                Eindhoven, Netherlands
+                <br />
                 December 2019 - August 2021
               </p>
               <p>
@@ -458,6 +462,8 @@ function Content() {
                 - 3D Front-end Developer -
                 <br />
                 Quadriceps B.V.
+                <br />
+                ‘s-Hertogenbosch, Netherlands
                 <br />
                 June 2021 - August 2021
               </p>
@@ -467,7 +473,9 @@ function Content() {
                 <br />
                 PT. Teknologi Kartu Indonesia
                 <br />
-                December 2020 - March 2021
+                Remote
+                <br />
+                December 2020 - Present
               </p>
             </p>
           </Html>
