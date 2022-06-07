@@ -290,7 +290,7 @@ function Content() {
           {/* <OrbitControls /> */}
         </group>
       </Section>
-      <Section factor={1} offset={1}>
+      <Section factor={0.6} offset={1}>
         <group position={position}>
           <Diamonds1
             rotation={[1, 0, -180]}
@@ -334,7 +334,7 @@ function Content() {
           </Html>
         </group>
       </Section>
-      <Section factor={1} offset={2}>
+      <Section factor={0.6} offset={2}>
         <group position={position}>
           <Diamonds2
             rotation={[1, 0, -90]}
