@@ -432,53 +432,44 @@ function Content() {
             <div>
               <h3>Education</h3>
               <br />
-              <p>- Graduated ICT Propadeutic Diploma. -</p>
+              <h4>Graduated ICT Propadeutic Diploma.</h4>
               <p>Fontys Unversity of Applied Sciences, Netherlands</p>
             </div>
             <br />
             <br />
             <h3>Working<br/> Experiences:</h3>
             <br />
-            <p>
+            <div>
               {" "}
-              - Freelance Visual Jockey -
-              <br />
-              Self-employed
-              <br />
-              Bandung, Indonesia
-              <br />
-              August 2017 - August 2018
-            </p>
-            <p>
+              <h4>Freelance Visual Jockey</h4>
+              <p>Self-employed</p>
+              <p>Bandung, Indonesia</p>
+              <p>August 2017 - August 2018</p>
+            </div>
+            <br />
+            <div>
               {" "}
-              - Urban Food Courier -
-              <br />
-              Deliveroo
-              <br />
-              Eindhoven, Netherlands
-              <br />
-              December 2019 - August 2021
-            </p>
-            <p>
+              <h4>Urban Food Courier</h4>
+              <p>Deliveroo</p>
+              <p>Eindhoven, Netherlands</p>
+              <p>December 2019 - August 2021</p>
+            </div>
+            <br />
+            <div>
               {" "}
-              - 3D Front-end Developer -
-              <br />
-              Quadriceps B.V.
-              <br />
-              ‘s-Hertogenbosch, Netherlands
-              <br />
-              June 2021 - August 2021
-            </p>
-            <p>
+              <h4>3D Front-end Developer</h4>
+              <p>Quadriceps B.V.</p>
+              <p>‘s-Hertogenbosch, Netherlands</p>
+              <p>June 2021 - August 2021</p>
+            </div>
+            <br />
+            <div>
               {" "}
-              - Front-end Developer -
-              <br />
-              PT. Teknologi Kartu Indonesia
-              <br />
-              Remote
-              <br />
-              December 2020 - Present
-            </p>
+              <h4>Front-end Developer</h4>
+              <p>PT. Teknologi Kartu Indonesia</p>
+              <p>Remote</p>
+              <p>December 2020 - Present</p>
+            </div>
           </Html>
         </group>
       </Section>
