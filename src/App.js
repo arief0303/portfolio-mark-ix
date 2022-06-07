@@ -428,6 +428,7 @@ function Content() {
             style={{ width: "70vw" }}
           >
             <p className="text">
+              <br />
               Education:
               <br />
               <br />
