@@ -328,7 +328,7 @@ function Content() {
               I am a Frontend developer who is avid in 3D computer graphics.
               From my previous studies in ICT & Media Design. I also have a
               background in 3D modelling & visualisation with tools such as
-              Maya, Blender,and Cinema4D.
+              Maya, Blender, and Cinema4D.
             </p>
           </Html>
         </group>
