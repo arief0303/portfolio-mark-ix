@@ -491,7 +491,7 @@ function Content() {
         </group>
       </Section>
       <Section factor={1} offset={4}>
-        <group position={[0, 4, 0]}>
+        <group position={[0, 4, -9]}>
           <Diamonds4
             rotation={[1, 0, -40]}
             layers={[0, 11]}
