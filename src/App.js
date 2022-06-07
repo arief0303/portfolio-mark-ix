@@ -507,7 +507,7 @@ function Content() {
           >
             <p className="text">
               My name is Arief, and I'm a creative developer. I was born in
-              Indonesia and I grew up loving arts and technology. I have a keen
+              Indonesia and I grew up loving art and technology. I have a keen
               eye for visual art and a love of coding.
               <br />
               <br />
