@@ -429,10 +429,18 @@ function Content() {
           >
             <p className="text">
               <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
               Education:
               <br />
               <br />
-              <p>- Graduated ICT Propadeutic Phase. -</p>
+              <p>- Graduated ICT Propadeutic Diploma. -</p>
+              <p>Fontys Unversity of Applied Sciences, Netherlands</p>
             </p>
             <br />
             <p className="text">
