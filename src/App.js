@@ -320,10 +320,11 @@ function Content() {
             position={[0, -7, 0]}
             style={{ width: "70vw" }}
           >
-            <p className="text">
+            <h3>
               Skills: HTML, Javascript, CSS, SASS, WebGL, Three.js, React,
               Vue.js, Nuxt.js
-            </p>
+            </h3>
+            <br />
             <p className="text">
               I am a Frontend developer who is avid in 3D computer graphics.
               From my previous studies in ICT & Media Design. I also have a
@@ -381,7 +382,8 @@ function Content() {
             position={[0, -8, 0]}
             style={{ width: "70vw" }}
           >
-            <p className="text">Skills: Python, Tensorflow, OpenCV</p>
+            <h3>Skills: Python, Tensorflow, OpenCV</h3>
+            <br />
             <p className="text">
               During my specialization in Artificial Intelligence, I specialize
               in Computer Vision technology and Deep Learning tools to develop
@@ -427,7 +429,7 @@ function Content() {
             position={[0, -10, 0]}
             style={{ width: "70vw" }}
           >
-            <p className="text">
+            <div>
               <br />
               <br />
               <br />
@@ -436,56 +438,54 @@ function Content() {
               <br />
               <br />
               <br />
-              Education:
-              <br />
+              <h3>Education</h3>
               <br />
               <p>- Graduated ICT Propadeutic Diploma. -</p>
               <p>Fontys Unversity of Applied Sciences, Netherlands</p>
-            </p>
+            </div>
             <br />
-            <p className="text">
-              Working Experiences:
+            <br />
+            <h3>Working<br/> Experiences:</h3>
+            <br />
+            <p>
+              {" "}
+              - Freelance Visual Jockey -
               <br />
-              <p>
-                {" "}
-                - Freelance Visual Jockey -
-                <br />
-                Self-employed
-                <br />
-                Bandung, Indonesia
-                <br />
-                August 2017 - August 2018
-              </p>
-              <p>
-                {" "}
-                - Urban Food Courier -
-                <br />
-                Deliveroo
-                <br />
-                Eindhoven, Netherlands
-                <br />
-                December 2019 - August 2021
-              </p>
-              <p>
-                {" "}
-                - 3D Front-end Developer -
-                <br />
-                Quadriceps B.V.
-                <br />
-                ‘s-Hertogenbosch, Netherlands
-                <br />
-                June 2021 - August 2021
-              </p>
-              <p>
-                {" "}
-                - Front-end Developer -
-                <br />
-                PT. Teknologi Kartu Indonesia
-                <br />
-                Remote
-                <br />
-                December 2020 - Present
-              </p>
+              Self-employed
+              <br />
+              Bandung, Indonesia
+              <br />
+              August 2017 - August 2018
+            </p>
+            <p>
+              {" "}
+              - Urban Food Courier -
+              <br />
+              Deliveroo
+              <br />
+              Eindhoven, Netherlands
+              <br />
+              December 2019 - August 2021
+            </p>
+            <p>
+              {" "}
+              - 3D Front-end Developer -
+              <br />
+              Quadriceps B.V.
+              <br />
+              ‘s-Hertogenbosch, Netherlands
+              <br />
+              June 2021 - August 2021
+            </p>
+            <p>
+              {" "}
+              - Front-end Developer -
+              <br />
+              PT. Teknologi Kartu Indonesia
+              <br />
+              Remote
+              <br />
+              December 2020 - Present
             </p>
           </Html>
         </group>
