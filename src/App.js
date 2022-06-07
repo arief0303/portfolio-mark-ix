@@ -426,18 +426,10 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -10, 0]}
+            position={[0, -12, 0]}
             style={{ width: "70vw" }}
           >
             <div>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
               <h3>Education</h3>
               <br />
               <p>- Graduated ICT Propadeutic Diploma. -</p>
