@@ -433,6 +433,7 @@ function Content() {
               <h3>Education</h3>
               <br />
               <h4>Graduated ICT Propadeutic Diploma</h4>
+              <p>2020</p>
               <p>Fontys Unversity of Applied Sciences, Netherlands</p>
             </div>
             <br />
