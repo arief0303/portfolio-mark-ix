@@ -359,7 +359,7 @@ function Content() {
           <Html
             center
             layers={[0]}
-            position={[0, -6, 0]}
+            position={[0, -9, 0]}
             style={{ width: "70vw" }}
           >
             <h3>Skills: C#, Unity, Unreal Engine, Blender, Maya</h3>
