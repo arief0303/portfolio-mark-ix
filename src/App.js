@@ -326,10 +326,8 @@ function Content() {
             </h3>
             <br />
             <p className="text">
-              I am a Frontend developer who is avid in 3D computer graphics.
-              From my previous studies in ICT & Media Design. I also have a
-              background in 3D modelling & visualisation with tools such as
-              Maya, Blender, and Cinema4D.
+              I am a Frontend developer who is avid in 3D computer graphics. A pixel perfect developer who loves to make beautiful designs into reality.
+              
             </p>
           </Html>
         </group>
@@ -347,7 +345,7 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            Computer
+            Tecnhical
           </Text>
           <Text
             position={[0, -1, 0]}
@@ -356,38 +354,18 @@ function Content() {
             material-color="#FFFFFF"
             {...TEXT_PROPS}
           >
-            Vision
-          </Text>
-          <Text
-            position={[0, -2, 0]}
-            depthTest={false}
-            material-toneMapped={false}
-            material-color="#FFFFFF"
-            {...TEXT_PROPS}
-          >
-            &
-          </Text>
-          <Text
-            position={[0, -3, 0]}
-            depthTest={false}
-            material-toneMapped={false}
-            material-color="#FFFFFF"
-            {...TEXT_PROPS}
-          >
-            AI Developer
+            Artist
           </Text>
           <Html
             center
             layers={[0]}
-            position={[0, -8, 0]}
+            position={[0, -4, 0]}
             style={{ width: "70vw" }}
           >
-            <h3>Skills: Python, Tensorflow, OpenCV</h3>
+            <h3>Skills: C#, Unity, Unreal Engine</h3>
             <br />
             <p className="text">
-              During my specialization in Artificial Intelligence, I specialize
-              in Computer Vision technology and Deep Learning tools to develop
-              AI models to gain information from digital images.
+              During my stay in the Netherlands, I worked as a web products configurators developer and dived in 3D web graphics and R&D using Unreal Engine another mention is that I received education in developing Unity with C# during my education in Information Communication Technology with my specialization in Media Design.
             </p>
             {/* <p className="text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -438,7 +416,7 @@ function Content() {
             </div>
             <br />
             <br />
-            <h3>Working<br/> Experiences:</h3>
+            <h3>Working<br /> Experiences:</h3>
             <br />
             <div>
               {" "}
