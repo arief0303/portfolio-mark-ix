@@ -365,7 +365,7 @@ function Content() {
             <h3>Skills: C#, Unity, Unreal Engine</h3>
             <br />
             <p className="text">
-              During my stay in the Netherlands, I worked as a web products configurators developer and dived in 3D web graphics and R&D using Unreal Engine another mention is that I received education in developing Unity with C# during my education in Information Communication Technology with my specialization in Media Design.
+              During my stay in the Netherlands, I worked as a web products configurators developer and dived in 3D web graphics and R&D using Unreal Engine another mention is that I received education in developing Unity with C# during my study in Information Communication Technology with my specialization in Media Design.
             </p>
             {/* <p className="text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
