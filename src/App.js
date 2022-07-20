@@ -362,7 +362,7 @@ function Content() {
             position={[0, -6, 0]}
             style={{ width: "70vw" }}
           >
-            <h3>Skills: C#, Unity, Unreal Engine</h3>
+            <h3>Skills: C#, Unity, Unreal Engine, Blender, Maya</h3>
             <br />
             <p className="text">
               During my stay in the Netherlands, I worked as a web products configurators developer and dived in 3D web graphics and R&D using Unreal Engine another mention is that I received education in developing Unity with C# during my study in Information Communication Technology with my specialization in Media Design.
